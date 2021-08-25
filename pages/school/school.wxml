@@ -1,0 +1,147 @@
+<view class="top_position">
+  <!-- 搜索框 -->
+  <view class="sousuo" bindtap="sousuo">
+    <view>
+      <image class="sstb" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%90%9C%E7%B4%A2%20copy%202%403x.png"></image>
+    </view>
+    <view class="sstbk">课程</view>
+  </view>
+
+  <view catchtouchmove="preventTouchMove" class=" weui-demo-dialog layer_tess {{changeStatus ? 'weui-demo-dialog_show' : ''}}">
+    <view class="screen">
+      <view class="screen_item {{sortFilter!='排序筛选'?'actives':''}}" hover-class="wsui-btn__hover_list" data-type="StudentType" bindtap="sortFilterHander">
+        {{sortFilter}}
+        <block wx:if="{{sortFilter!='排序筛选'}}">
+          <image data-type="StudentType" catchtap="removeClassHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+        </block>
+
+      </view>
+      <view class="screen_item {{niceClassStatus?'active':''}}" hover-class="wsui-btn__hover_list" bindtap="niceClassHander">超赞课程</view>
+      <view class="screen_item {{seasonStatus?'active':''}}" hover-class="wsui-btn__hover_list" bindtap="seasonActivHander">当季活动</view>
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 标题与介绍 -->
+<view class="titile">
+  <view class="titile_1">心仪的课程</view>
+  <view class="titile_2">在小程序上搜索您中意的课程，记录一段美好的回忆。</view>
+</view>
+
+
+<!-- 主要内容展示 -->
+<view class="body">
+  <!-- 课程数量 -->
+  <view class="body_number ">15套课程</view>
+
+
+  <!-- 信息展示 -->
+  <block wx:for="{{courseArray}}" wx:key="courseId" wx:for-index="indexFater">
+    <view bindtap="toinfo" data-status="{{item.collectionStatus}}" data-inx="{{indexFater}}" class="body_main">
+      <!-- 轮播图部分 -->
+      <view catchtap="collectionHander" data-index="{{indexFater}}">
+        <image class="sc" src="{{item.collectionStatus?'https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/17d0b2bb9d59bcb7115c682d49ef045.png':'https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/66d5027e8b5863b3309158d28a7f82f.png'}}"></image>
+
+      </view>
+
+
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" indicator-color='#fff' indicator-active-color='#999' duration="{{duration}}" circular='{{circular}}' class='ibanner'>
+        <swiper-item class="swiper_item" wx:for="{{item.imgUrls}}" wx:for-item="itemName" wx:for-index="indexson" wx:key="{{indexson}}">
+          <navigator url='{{itemName.link}}' open-type='switchTab'>
+            <image src="{{itemName.url}}" class="slide-image" mode="widthFix" />
+          </navigator>
+        </swiper-item>
+      </swiper>
+
+
+      <!-- 文字部分 -->
+      <view class="body_text">
+        <view class="body_text_1">{{item.courseName}}</view>
+        <view class="body_text_2">{{item.shopInfo}}。</view>
+        <view class="body_text_3">
+
+          <block wx:if="{{item.newCourse}}">
+            <view class="isnew">
+              <image class="hxin" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%96%B0%E8%AF%BE%E7%A8%8B%403x.png"></image>
+            </view>
+
+            <view class="isnew">新课程</view>
+          </block>
+
+
+
+          <block wx:else>
+            <block wx:for="{{item.statrCount}}">
+              <view class="isnew">
+                <image class="xing " src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513155227.png"></image>
+              </view>
+
+            </block>
+            <view class="isnew">{{item.evaluateCount}}条评价</view>
+
+          </block>
+
+        </view>
+      </view>
+
+
+
+
+
+
+      <view class="xian" style="margin-top: 12rpx;"></view>
+      <view class="footer">
+        <view class="footer_price">￥{{item.coursePrice}}</view>
+        <view class="footer_tw">
+          <image class="duigou" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%8A%98%E6%89%A3%E6%A0%87%E5%BF%97%403x.png"></image>
+          <view class="istj">{{item.activeName}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+
+
+<!-- 筛选弹窗 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrueStudent ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayerStudent"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">排序筛选</view>
+      <view bindtap="closeLayerStudent" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{sortFilterArray}}" wx:key="index" data-index="{{index}}">
+          <view>{{item}}</view>
+          <radio value="{{item}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHanderStudent">确定</view>
+  </view>
+</view>

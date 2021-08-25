@@ -1,0 +1,55 @@
+<view class="top_position">
+  <view class="title_top">课表浏览</view>
+  <view class="title_details">点击排课记录，可查看课程详情。</view>
+
+</view>
+<view class="week_info">
+  <view class="current_week">本周
+  </view>
+  <!-- 按钮 -->
+  <scroll-view class="scroll-view_x" scroll-x="true" style="width: 550rpx;">
+    <block wx:for="{{4}}">
+      <view bindtap="deWeekHander" data-index="{{index}}" class="week_item"> {{item+1}}</view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 星期栏 -->
+<view class="data_root">
+  <view class="week data_list">
+    <view wx:for="一二三四五六日">
+      周{{item}}
+    </view>
+  </view>
+  <view class="data_info data_list">
+    <view wx:for="1234567">
+      {{item}}日
+    </view>
+  </view>
+</view>
+
+<view class="content">
+  <!-- 左侧时间段 -->
+  <view class=" content_time">
+    <view wx:for="{{dateArray}}" class="content_ss">
+      <view class="class_items">
+        <view style="font-size:30rpx;font-weight:600;text-align: center; color:rgba(22,8,10,1);">{{index+1}}</view>
+        <view style="font-size:20rpx; text-align: center; color:rgba(22,8,10,0.7);">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--     {{item.courseName}}{{item.courseArea}} -->
+<!-- 课表具体内容 -->
+<view class=" content_list_bottom">
+  <view wx:for="{{courseArray}}" class="content_list_item">
+    <view class="class_item" style="bottom:80%;height:160rpx">
+      <view class="class_info_content">
+      <view class="list_item_table">    {{item.courseName}}</view>
+      <view class="lsit_item_table sss"> 
+        <image src="https://sbkteacher.oss-cn-hangzhou.aliyuncs.com/LesPrepar/%E5%9C%B0%E5%9D%80%20copy%403x.png"></image>
+        <text>{{item.courseArea}}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

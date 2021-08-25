@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+<view class="drawer_screen" bindtap="showOrHide" wx:if="{{isShow}}" catchtouchmove="myCatchTouch"></view>
+<view >
+
+
+
+
+  <view   class="timetable_content {{donghua}}" bindtap="showOrHide"  >
+  <view wx:if="{{!isShow}}" >
+    <image  src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/%E8%AF%BE%E8%A1%A8%403x.png"></image>
+  </view>
+  <view wx:else>
+  
+  <view class="table_content">
+   <view class="title">课表浏览</view>
+      <view class="data_scroll">
+        <scroll-view class="data_scrolls" scroll-x="true">
+          <view catchtap="navTbaleHander" data-index="{{index}}" class="list_item" wx:for="{{weekCount}}" wx:for-item="item">
+            <view class="list_info_main">
+              <view class="item_number list_cc">{{item+1}}</view>
+              <view class="list_cc smll_info">
+                <view style="font-size:16rpx; width:20rpx;">st</view>
+                <view style="font-size:14rpx; width:20rpx;  margin-top: -4rpx;">周</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+  </view>
+  </view>
+
+</view>
+
+
+
+<view wx:if="{{!isShow}}" class="number">{{weekCount}}</view>
+ 
+</view>

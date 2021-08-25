@@ -1,0 +1,34 @@
+<view class="root " wx:if="{{calendar}}">
+  <view class="calendar b tb">
+    <!-- 头部操作栏 -->
+
+    <!-- calendarConfig.hideHeadOnWeekMode 是否展示周栏-->
+  
+    <!-- 星期栏 -->
+    <view class="weeks b lr ac ">
+      <view class="week fs28" wx:for="{{calendar.weeksCh}}" wx:key="index" data-idx="{{index}}">{{item}}</view>
+    </view>
+    <!-- 日历面板主体 -->
+    <view class="zanshi">
+      <!-- 本月日期格子 -->
+      <!--  -->
+      <view class="  b  " wx:for="{{calendar.days}}" wx:key="index" data-disable="{{item.disable}}" data-idx="{{index}}" bindtap="tapDayItem" >
+   
+          <view class=" b  date_info">
+            {{item.day}}日
+            <view>
+              {{item.lunar.Term || item.lunar.IDayCn}}
+            </view>
+            <view >
+              {{item.todoText}}
+            </view>
+            <view >
+          
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

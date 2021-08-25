@@ -1,0 +1,208 @@
+.appraise {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 42rpx;
+}
+
+.pingjia {
+  font-size: 46rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+}
+
+.pj_desc {
+  margin-top: 18rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 36rpx;
+}
+
+/***************总评价部分*****************/
+
+.appraise_2 {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 90rpx;
+  display: flex;
+}
+
+.sum {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  padding-right: 48rpx;
+}
+
+.xing {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: sub;
+}
+
+.pingfen {
+  font-size: 34rpx;
+  font-weight: 400;
+  padding-left: 20rpx;
+  color: rgba(22, 8, 10, 1);
+}
+
+/***************总评价部分*****************/
+
+.appraise_3 {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 74rpx;
+}
+
+.appraise_3_1 {
+  display: flex;
+  margin-bottom: 28rpx;
+}
+
+.desc {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(73, 73, 73, 1);
+}
+
+.xinss {
+  position: absolute;
+  right: 46rpx;
+}
+
+.xins {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+  vertical-align: baseline;
+}
+
+/******************************************/
+
+.xian {
+  margin: 0px auto;
+  margin-top: 10rpx;
+  width: 90%;
+  height: 2rpx;
+  background-color: #efeeee;
+ 
+}
+
+.daoyu {
+  margin: 0px auto;
+  margin-top: 26rpx;
+  width: 90%;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.2);
+  line-height: 40rpx;
+}
+
+/*******************教师***********************/
+
+.thears {
+  width: 90%;
+  display: flex;
+  margin: 0px auto;
+  height: 150rpx;
+  line-height: 150rpx;
+  justify-content: space-between;
+}
+
+.thear {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.theaname {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.8);
+  margin-left: 28rpx;
+}
+
+.dianzz {
+  position: relative;
+}
+
+.falsedianz {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  position: absolute;
+  left: 15%;
+  bottom: 59rpx;
+}
+
+.turedianz {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  position: absolute;
+  left: 52%;
+  bottom: 59rpx;
+}
+
+.btnv {
+  margin-top: 100rpx;
+  padding-bottom: 17px;
+}
+
+.btn {
+  margin: 0px auto;
+  text-align: center;
+  width: 328px;
+  height: 48px;
+  line-height: 48px;
+  background: rgba(0, 132, 137, 1);
+  border-radius: 4px;
+  font-size: 19px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+/*swtich整体大小及背景色  background: RGBA(0, 132, 137, 1) !important;*/
+
+
+.weui-textarea{
+  color: black;
+}
+.placeholderStyle{
+  line-height:80rpx;
+  letter-spacing:10rpx;
+}
+
+
+
+/* 底部按钮 */
+
+
+.bottom_bar {
+  width: 100%;
+  border-top: 1px;
+  position: fixed;
+  bottom: 0px;
+  box-shadow: 0px 1px 4px 1px rgba(195, 194, 194, 0.5);
+  padding-top: 17px;
+  padding-bottom: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff
+}
+
+
+.bottom_bar .next_time {
+  width: 656rpx;
+  height: 96rpx;
+  background: rgba(50, 133, 139, 1);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 96rpx;
+  text-align: center;
+}

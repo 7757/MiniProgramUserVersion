@@ -1,0 +1,113 @@
+<view>
+  <view class="appraise">
+    <view class="pingjia">全部评价</view>
+    <view class="pj_desc">每次与您孩子眼神的交流，思维的启发，都希望得到您有温度的评价</view>
+  </view>
+
+  <view class="appraise_2">
+    <view>
+      <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png"></image>
+    </view>
+    <view class="pingfen">4.80</view>
+    <view class="sum">18条评价</view>
+  </view>
+
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 27px;"></view>
+
+  <view class="appraise_3">
+    <view class="appraise_3_1">
+      <view class="desc">如实描述</view>
+      <view class="xinss">
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        5.0
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">课堂效果</view>
+      <view class="xinss">
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        5.0
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">环境卫生</view>
+      <view class="xinss">
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image class="kuai" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        5.0
+      </view>
+    </view>
+  </view>
+
+  <view class="xian"></view>
+
+
+  <!-- 用户部分 -->
+  <view class="foot">
+    <view class="userap">
+      <view class="p_header">
+        <view>
+          <image class="p_avater" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+        </view>
+        <view class="p_name">喜羊羊</view>
+        <view class="p_time">2019 年 11 月 12 日</view>
+      </view>
+
+      <!-- 评价内容 省略第三行-->
+      <view class="p_body">2小时前 - 导读:武磊进球打破历史,在西甲91年的历史上,第一次有了中国球员攻破巴萨的大门,孟非大赞武磊:低调中前进更让人多了一份赞赏!</view>
+    </view>
+
+    <view class="userap">
+      <view class="p_header">
+        <view>
+          <image class="p_avater" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+        </view>
+        <view class="p_name">喜羊羊</view>
+        <view class="p_time">2019 年 11 月 12 日</view>
+      </view>
+
+      <!-- 评价内容 省略第三行-->
+      <view class="p_body">2小时前 - 导读:武磊进球打破历史,在西甲91年的历史上,第一次有了中国球员攻破巴萨的大门,孟非大赞武磊:低调中前进更让人多了一份赞赏!</view>
+    </view>
+
+
+    <view class="userap">
+      <view class="p_header">
+        <view>
+          <image class="p_avater" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+        </view>
+        <view class="p_name">喜羊羊</view>
+        <view class="p_time">2019 年 11 月 12 日</view>
+      </view>
+
+      <!-- 评价内容 省略第三行-->
+      <view class="p_body">2小时前 - 导读:武磊进球打破历史,在西甲91年的历史上,第一次有了中国球员攻破巴萨的大门,孟非大赞武磊:低调中前进更让人多了一份赞赏!</view>
+    </view>
+
+    <view class="userap">
+      <view class="p_header">
+        <view>
+          <image class="p_avater" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+        </view>
+        <view class="p_name">喜羊羊</view>
+        <view class="p_time">2019 年 11 月 12 日</view>
+      </view>
+
+      <!-- 评价内容 省略第三行-->
+      <view class="p_body">2小时前 - 导读:武磊进球打破历史,在西甲91年的历史上,第一次有了中国球员攻破巴萨的大门,孟非大赞武磊:低调中前进更让人多了一份赞赏!</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,241 @@
+<view class="root">
+
+  <!--标签栏页签-->
+  <view class="headNavigation">
+    <view class="shopAndDistance" bindtap="latelyShop">
+      <text class="shopAdress" style="font-size:28rpx;">{{shop[shopIndex].shopAddress}}</text>
+      <text class="item" style="font-size:24rpx">距离您 {{ shop[shopIndex].shopDistance<1?shop[shopIndex].shopDistance*1000:shop[shopIndex].shopDistance}}{{shop[shopIndex].shopDistance>1?"km":"m"}}</text>
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/jiangningshop.png" class="shopImage" mode="widthFix" />
+    </view>
+    <view class="moreInformation" bindtap="moreShop">
+      <text class="info moreshopinfo" style="font-size:24rpx">更多门店信息</text>
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/moreStoreInformation.png" class="moreStoreInformation" mode="widthFix" />
+    </view>
+  </view>
+  <!--内容区域-->
+  <view class="content">
+    <!-- 轮播图 -->
+    <swiper circular="true" bindtap="swiperHander" class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#F8FAF6">
+      <swiper-item wx:for="{{rotationChart}}" wx:key="index">
+        <image src="{{item}}" style="width:100% "></image>
+      </swiper-item>
+    </swiper>
+
+    <view class="cardRoot">
+      <view class="head_name">
+        <image style="vertical-align:middle;" class="head_portrait" src="{{user.heard}}" mode="widthFix"></image>
+        <!-- 这里的需要在处理一下，根据访问时间判断上中下 -->
+        <text style="font-size:34rpx;color:rgba(22,8,10,0.8);font-weight:bold;vertical-align: middle;">{{accesTime}}好，{{user.name}}</text>
+      </view>
+      <view class="city_name_address">
+        <text style="font-size:28rpx;color:rgba(22,8,10,0.6)">{{shop[0].shopBranchName}}</text>
+      </view>
+      <view>
+        <button class="makeBtn" bindtap="appointment">预约</button>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="details">
+  <view>
+    <view class="detail" style="font-size:46rpx;color:rgba(22,8,10,0.8);font-weight:bold">详情</view>
+  </view>
+  <!-- 按钮切换展示详情  默认展示课时-->
+  <view class="details_btn">
+    <button class="detail_Btn {{btnActive===1?'active':''}} " bindtap="classBtn">课程{{(user.classNumber>0)?"·":""}}{{user.classNumber>0?user.classNumber:"" }}
+    </button>
+    <button class="detail_Btn {{btnActive===2?'active':''}}" bindtap="remainClassBtn">剩余课时{{user.remainClassHour>0?"·":""}}{{user.remainClassHour>0?user.remainClassHour:"" }}
+    </button>
+    <button class="detail_Btn {{btnActive===3?'active':''}}" bindtap="vipCardBtn">会员码</button>
+  </view>
+
+  <!-- 默认  新用户页面-->
+  <view class="contener" wx:if="{{classDetails.length<=0 && btnActive===1}}">
+    <view style="font-size:46rpx;color:rgba(22,8,10,0.8);font-weight:bold;  padding-bottom: 32rpx;margin-right:570rpx;margin-top:40rpx">课程</view>
+    <view style="font-size:24rpx;color:rgba(22,8,10,0.8);letter-spacing:5rpx ;padding-bottom: 98rpx;  margin: 0rpx 46rpx;">您当前还没有在小程序安排过课程，点击开始探索，与孩子交流沟通，记录一段成长历程。</view>
+    <image class="shoutu" style="display:flex" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/students.png"></image>
+    <view class="explore_btn">
+      <view style="padding-top:28rpx" bindtap="exploreBtn">开始探索</view>
+    </view>
+  </view>
+
+  <!-- 新用户点击剩余课时 -->
+  <view class="contener" wx:if="{{classDetails.length<=0 && btnActive===2}}">
+    <view style="font-size:46rpx;color:rgba(22,8,10,0.8);font-weight:bold;  padding-bottom: 32rpx;margin-right:472rpx;margin-top:40rpx">剩余课时</view>
+    <view style="font-size:24rpx;color:rgba(22,8,10,0.8);letter-spacing:5rpx ;padding-bottom: 98rpx;  margin: 0rpx 46rpx;">您当前还没有在小程序安排过课程，点击开始探索，与孩子交流沟通，记录一段成长历程。</view>
+    <image class="classHours" style="display:flex" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classHourCount.png"></image>
+    <view class="explore_btn">
+      <view style="padding-top:28rpx" bindtap="exploreBtn">开始探索</view>
+    </view>
+  </view>
+
+
+  <!-- 当有课程数量的时候进入下面页面 -->
+
+  <view class="contener" wx:elif="{{classDetails.length>0 && btnActive===1}}">
+    <view class="class_list" wx:for="{{classDetails}}" wx:key="classId">
+
+      <view class="list_item_top">
+        <view class="hader_item">
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classTime.png" style=" width: 20rpx; height: 22rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+          <view style="vertical-align:middle;padding-right: 10rpx;">{{item.classTime}}</view>
+        </view>
+        <view class="hader_item">
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/className.png" style=" width: 20rpx; height: 20rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+          <view style="vertical-align:middle;padding-right: 10rpx;">{{item.className}}</view>
+        </view>
+        <view class="hader_item">
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classRoom.png" style="width: 22rpx; height: 24rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+          <view style="vertical-align:middle;padding-right: 10rpx;">{{item.classRoom}}</view>
+        </view>
+      </view>
+
+
+      <view class="class_details">
+        <text>{{item.classIntroduce.length>0?item.classIntroduce:'课程备课暂无，请耐心等待备课信息。'}}</text>
+        <text class="{{item.classIntroduce.length>0?'keepRecord_btn':'keepRecord_btn_hiden'}}" data-intro="{{item.classIntroduce}}" bindtap="keepOnRecord" data-index="{{index}}">查看更多备案信息</text>
+      </view>
+      <view class="teach_info">
+        <view>
+          <image class="teacher_hears" src="{{item.classTeacherHead}}" mode="widthFix"></image>
+        </view>
+        <view class="teacher_layout">
+          <view class="teach_font">{{item.classTeacher}}</view>
+          <view class="teach_age">
+            <view style="margin-right: 8rpx">{{item.teacherEntryTime}}年入职</view>
+            <view> 教龄{{item.teachingAge}}年</view>
+          </view>
+        </view>
+        <view>
+          <view class="btn_appointment" bindtap="cancelReservation" data-index="{{index}}" data-s="{{item.classTime}}" data-sname="{{item.className}}">取消预约</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 点击剩余课时展示信息 -->
+  <view catchtap="lookClassDetails" class="contener" wx:elif="{{user.remainClassHour>0 && btnActive===2}}">
+
+    <view class="remain_class_hour_list" wx:for="{{classDetails}}" wx:key="classId" catchtap="classDetailsHander" data-index="{{index}}">
+      <view class="remain_class_hour_left">
+        <image src="{{item.classHeadDiagram}}" mode="widthFix"></image>
+      </view>
+      <view class="remain_class_hour_right">
+        <view class="remain_class_hour_top">
+          <text>【{{item.className}}】</text>
+          <text style="padding-left:10rpx">{{item.courseIntroduction}}</text>
+        </view>
+        <view class="remain_class_hour_bottom">
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classHourTime.png" mode="widthFix"></image>
+          <view style="padding-left:12rpx">{{item.classTermValidity}}</view>
+          <image style="padding-left:30rpx" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classHourCount.png" mode="widthFix"></image>
+          <view style="padding-left:12rpx">{{item.remainingClassHour}}节</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="contener" wx:elif="{{btnActive===3}}">
+    <view class="vip_card">
+      <view class="vip_student_number">
+        <view class="student_number_font">学员号</view>
+        <view class="student_number">{{user.vipCard}}</view>
+      </view>
+
+      <view class="qr_introduce">
+        <view class="qr_code_font">二维码</view>
+        <view class="qr_code_info">本页面二维码包含了您的账户信息，仅用于(小番茄 培训机构)线下门店使用，请勿发送他人。</view>
+      </view>
+      <view class="qr_code">
+        <image class="qr_code_code" src="{{user.qrCode}}" mode="widthFix"></image>
+        <view class="refresh_btn">
+          <image class="qr_code_refresh" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/reFresh.png" mode="widthFix" bindtap="refreshBtn"></image>
+          <view class="refresh_button">刷新</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<menu hidden id='menu' bind:navTbaleHander="_deleteLotsEvent" />
+
+
+
+<!-- 教案详情 -->
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus && btnActive===1}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="layer_shown_box" wx:if="{{showModalStatus && btnActive===1}}">
+  <view class="layer_root">
+    <view class="top_teacher">
+      <text class="teacher_title">教案详情</text>
+      <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+      </view>
+    </view>
+    <view class="teaching_plan" catchtouchmove="true">教案</view>
+    <view class="teaching_details">{{layerClass.courseIntroduction}}</view>
+    <view class="center_teacher">老师</view>
+    <view class="teacher_bottom">
+      <view>
+        <image src="{{layerClass.classTeacherHead}}" class="teacer_hear"></image>
+      </view>
+      <view class="bottom_right">
+        <view class="teacher_name">{{layerClass.classTeacher}}</view>
+        <view class="teacher_incrment">加入 {{brandName}}时间:{{layerClass.teacherEntryTime}} 年，{{layerClass.teachingAge}}年教龄 </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+<!-- 取消预约 -->
+
+<view catchtouchmove="preventTouchMove" class="modal-mask" bindtap='hiddenmodel' wx:if="{{ showModel}}"></view>
+<view class='modal-dialog' wx:if="{{ showModel}}">
+  <view class='contentsss'>
+    <text class='modalMsg'></text>
+    <view class="titles">你想将{{currDates+' '}} {{currNames}}的课程取消预约吗?</view>
+  </view>
+
+
+  <view class='btn1'>
+    <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+    <view bindtap='Sure' class='Sure'>确定</view>
+  </view>
+
+</view>
+
+
+
+
+<!-- 教案详情 -->
+<view class="layer_shown" bindtap="courseHiden" wx:if="{{courseDetails && btnActive===2}}"></view>
+<!--弹出框  -->
+<view animation="{{courseDetailAnimation}}" class="layer_shown_box" wx:if="{{courseDetails && btnActive===2}}">
+  <view class="layer_root">
+    <view class="top_teacher">
+      <text class="teacher_title">{{className}}·课时详情</text>
+      <view class="bolck" catchtouchmove="true" bindtap="courseHiden" wx:if="{{courseDetails}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+      </view>
+    </view>
+    <view class="teaching_plan" catchtouchmove="true">概要</view>
+    <view class="teaching_details">{{courseIntroduction}}</view>
+    <view class="center_teacher">有效期</view>
+    <view class="teaching_details">{{classTermValidity}}</view>
+      <view class="center_teacher_hours">剩余课时</view>
+    <view class="teaching_details">{{remainingClassHour}}节</view>
+  </view>
+</view>

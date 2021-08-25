@@ -1,0 +1,107 @@
+<view class="" catchtouchmove="stopTouchMove" class="top_serch">
+
+  <view class="weui-search-bar">
+
+    <view class="search_top">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="请输入任课老师" />
+      </view>
+    </view>
+
+  </view>
+
+  <view catchtouchmove="preventTouchMove" class=" weui-demo-dialog layer_tess {{changeStatus ? 'weui-demo-dialog_show' : ''}}">
+    <view class="screen">
+      <view class="screen_item {{sortFilter!='排序筛选'?'actives':''}}" hover-class="wsui-btn__hover_list" data-type="StudentType" bindtap="sortFilterHander">
+        {{sortFilter}}
+        <block wx:if="{{sortFilter!='排序筛选'}}">
+          <image data-type="StudentType" catchtap="removeClassHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+        </block>
+
+      </view>
+      <view class="screen_item {{niceClassStatus?'active':''}}" hover-class="wsui-btn__hover_list" bindtap="niceClassHander">超赞老师</view>
+    </view>
+  </view>
+
+
+
+</view>
+
+
+
+
+<!-- 主要内容展示 -->
+<view class="body">
+  <!-- 标题 -->
+  <view class="t_zuij">
+    <view class="t_zuij_1">有温度的老师</view>
+    <view class="t_zuij_2">用心思考、筹划未来，我们愿永远相伴与您孩 子成长的岁 月长河里。</view>
+    <view class="tnumber">15位老师</view>
+  </view>
+
+  <!-- 信息展示 -->
+  <view class="teacher_itme"  bindtap="navTeacherHander" wx:for="{{teacerArray}}" wx:for-item="itemFather">
+
+    <swiper circular="true"  class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#F8FAF6">
+      <swiper-item class="swiper_item" wx:for="{{itemFather.morePhotos}}" wx:for-item="itemName" wx:key="index">
+        <image src="{{itemName}}" style="width:100% "></image>
+      </swiper-item>
+    </swiper>
+    <view class="teacher_flex">
+
+      <view class="teacher_name teacher">
+        {{itemFather.teacherName}}
+      </view>
+      <view class="teacher_info teacher">
+        {{itemFather.teacherAbout}}
+      </view>
+      <view class="teacher_card teacher">
+        <view class="card_item">入职{{itemFather.shopName+' '}} {{itemFather.entryTime}}年</view>
+        <view class="card_item">教龄{{itemFather.teachingAge}}年</view>
+        <view class="card_item">{{itemFather.teacherTag[0]}}</view>
+      </view>
+
+
+
+      <view class="teacher_eva teacher">
+        <view class="eva_item">
+          <image wx:for="{{itemFather.evaScope}}" class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513155227.png"></image>
+        </view>
+
+        <view class="eva_item infos">（{{itemFather.evaCount}}条评价）</view>
+      </view>
+
+
+
+
+
+    </view>
+
+
+  </view>
+
+</view>
+
+
+
+<!-- 筛选弹窗 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrueStudent ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayerStudent"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">排序筛选</view>
+      <view bindtap="closeLayerStudent" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{sortFilterArray}}" wx:key="index" data-index="{{index}}">
+          <view>{{item}}</view>
+          <radio value="{{item}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHanderStudent">确定</view>
+  </view>
+</view>

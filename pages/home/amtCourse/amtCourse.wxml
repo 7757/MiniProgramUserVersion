@@ -1,0 +1,93 @@
+<view class="root">
+  <view class="contenter">
+    <view class="class_info">
+      <view class="title" style="margin-bottom: 10rpx;">具体课程信息</view>
+      <view class="details">课程可根据您孩子的时间，喜欢的老师、课程提前预约， 预约之后如遇临时调整，可在小程序首页-课程信息中取消。</view>
+    </view>
+    <view class="btn_item" style="margin-bottom: 68rpx;">
+      <view class=" {{amtClass.amtTime!='添加时间'?'checke':'add_content'}}" bindtap="addTime">{{amtClass.amtTime}}</view>
+      <view class="detail_item">在流淌的岁月中，定格与孩子相伴的瞬间。</view>
+    </view>
+
+    <view class="btn_item" style="margin-bottom: 70rpx;" bindtap="chooseTeacher">
+      <view class="{{amtClass.amtTeacher!='选择老师'?'checke':'add_content'}}" bindtap="chooseTacher">{{amtClass.amtTeacher}}</view>
+      <view class="detail_item">为人师表，不仅关乎能力，更是对您孩子的责任所在。</view>
+    </view>
+
+    <view class="btn_item">
+      <view class="{{amtClass.amtClassInfo!='安排课程'?'checke':'add_content'}}" bindtap="chooseClass">{{amtClass.amtClassInfo}}</view>
+      <view class="detail_item">尊重孩子的选择，兴趣使然，在课堂过程中激发创造， 助力成长。</view>
+    </view>
+
+  </view>
+
+  <view class="bottom_bar">
+    <view class="reset" bindtap="resetHander" hover-class="wsui-btn__hover_list">重置</view>
+    <view class="next_btn" bindtap="nextHander" data-classDate="{{amtClass.amtTime}}" data-classTeacher="{{amtClass.amtTeacher}}" hover-class="wsui-btn__hover_list" data-className="{{amtClass.amtClassInfo}}">确定</view>
+  </view>
+
+</view>
+
+<!-- 遮罩 -->
+
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view class="modalDlg" animation="{{animationData}}" wx:if="{{showModalStatus}}">
+  {{tipsContent}}!
+</view>
+
+
+
+
+
+
+
+<!-- 弹框 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayer"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">课程</view>
+      <view bindtap="closeLayer" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{amtClassList}}" wx:key="index" data-index="{{index}}">
+          <view>{{item}}</view>
+          <radio value="{{item}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHander">确定</view>
+  </view>
+</view>
+
+
+
+<!-- 遮罩 -->
+
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="hideModals" wx:if="{{showModalStatuss}}"></view>
+<view animation="{{ssss}}" wx:if='{{showModalStatuss}}'>
+  <view class='mask_layer' bindtap='modal_click_Hidden' />
+  
+  
+  <view class='modal_box'>
+    
+    <view class='content'>
+      <text class='modalMsg'></text>
+      <view class="titles">你确定预约{{amtClass.amtTime+' '}}{{amtClass.amtTeacher+' '}}{{amtClass.amtClassInfo}}吗?</view>
+    </view>
+
+
+    <view class='btn1'>
+      <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+      <view bindtap='Sure' class='Sure'>确定</view>
+    </view>
+
+
+
+  </view>
+
+
+</view>

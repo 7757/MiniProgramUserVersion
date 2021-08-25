@@ -1,0 +1,17 @@
+<view class= "root">
+  <view class="title">
+    <view class="title_item">{{shop.shopName}}</view>
+    <!-- <image  style="  margin-left: 14rpx;"  src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/shopDetails/rightioc.png" class="ioc" ></image> -->
+  </view>
+  <view class="distance">(距离你{{shop.shopDistance>1?shop.shopDistance:shop.shopDistance*1000}}{{shop.shopDistance>1?"km":"m"}})</view>
+  <view  style=" margin-bottom: 72rpx;" class="title_item">门店信息</view>  
+  <view class="trip_mode">出行方式：{{shop.shopTripInfo}}</view>
+  <view class="telephone">电话: {{shop.shopTelephone}}</view>
+  <view class="business_hours"style=" margin-bottom: 50rpx;">营业时间：{{shop.scopeBusin}} {{shop.shopTime}}</view>
+  <view class="title_item" style=" margin-bottom: 28rpx;">其他须知</view>
+  <view class="other_content" style=" margin-bottom: 44rpx;">{{shop.ohterInfo}}</view>
+  <view class="view_more" bindtap="lookMoreDetails">
+    <view class="title_item">查看更多机构档案</view>
+    <image style="  margin-left: 18rpx;" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/shopDetails/rightioc.png" class="ioc"></image>
+  </view>
+</view>

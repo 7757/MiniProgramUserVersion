@@ -1,0 +1,22 @@
+<view class="root">
+
+  <view class="pic_top">
+    <view class="top_letf">
+      <view class="title">所有图片</view>
+      <view class="count">共{{rotationChart.length}}张</view>
+    </view>
+    <view class="top_right" bindtap="switchView" data-s="{{s}}">
+      <image src="{{s?change[0].typeIco:change[1].typeIco}}"></image>
+      <text>{{s?change[0].chooseFont:change[1].chooseFont}}</text>
+    </view>
+  </view>
+
+  <view class="pic_list" >
+    <view class="pic_list_item" wx:for="{{rotationChart}}" wx:key="index" >
+       <image src="{{item}}" class="{{s?change[0].viewFlag:change[1].viewFlag}}" mode="aspectFill"  bindtap="previewImage" data-src="{{item}}"></image>  
+    </view>
+   
+  </view>
+
+
+</view>

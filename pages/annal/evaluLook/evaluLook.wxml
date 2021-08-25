@@ -1,0 +1,90 @@
+<wxs src="../../../utils/subString/subString.wxs" module="tools" />
+
+
+<view class="evalu">
+  <view class="appraise">
+    <view class="pingjia">查看自己的评价</view>
+    <view class="pj_desc">家长们的每次评价都是希望孩子能在未来的成长岁月中幸福开心，内心平和。</view>
+    <view class="btn_list">
+      <view class="item_list" style=" background: rgba(227, 242, 242, 1) ;color: rgba(0, 116, 120, 1)">熊娟娟</view>
+      <view class="item_list">{{classData.courseName}}</view>
+      <view class="item_list">{{classData.className}}</view>
+      <view class="item_list">{{classData.shchoolName}}</view>
+    </view>
+    <view class="btn_lists">
+      <view class="item_list" style="width:356rpx;margin-right: 16rpx;">{{classData.courseDate+''}}{{classData.courseTime}} </view>
+      <view class="item_list" style="width:220rpx; background:rgba(244, 243, 234, 1) ;color: rgba(105, 81, 48, 1)">{{classData.scope+''}}分·排名前{{classData.ranking}}%</view>
+    </view>
+  </view>
+
+  <view class="appraise_2">
+    <view>
+      <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png"></image>
+    </view>
+    <view class="pingfen">{{classData.totalScore}}</view>
+   
+  </view>
+
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 27px;"></view>
+
+  <view class="appraise_3">
+    <view class="appraise_3_1">
+      <view class="desc">如实描述</view>
+      <view class="xinss">
+        <image wx:for="{{classData.trueDetails}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image wx:for="{{5-classData.trueDetails}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/36a518381b57a156ad63a515b5cbe78.png"></image>
+
+        {{classData.trueDetails}}.0
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">课堂效果</view>
+      <view class="xinss">
+        <image wx:for="{{classData.classEffect}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image wx:for="{{5-classData.classEffect}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/36a518381b57a156ad63a515b5cbe78.png"></image>
+
+        {{classData.classEffect}}.0
+
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">环境卫生</view>
+      <view class="xinss">
+        <image wx:for="{{classData.environHealth}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%BF%9B%E5%BA%A6%403x.png"></image>
+        <image wx:for="{{5-classData.environHealth}}" class="kuai" wx:key="index" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/36a518381b57a156ad63a515b5cbe78.png"></image>
+        {{classData.environHealth}}.0
+      </view>
+    </view>
+  </view>
+
+  <view class="xian"></view>
+
+
+  <!-- 用户部分 -->
+  <view class="foot">
+    <view class="userap">
+      <view class="p_header">
+        <view>
+          <image class="p_avater" src="{{classData.teacherPrice}}"></image>
+        </view>
+        <view class="p_name"> {{classData.studentName}}</view>
+        <view class="p_time">{{evaluData.evaTime}}</view>
+      </view>
+
+      <!-- 评价内容 省略第三行-->
+      <view class="main_eva">{{ ( tools.strLength(evaluData.evaInfo) && showAll )? tools.sub(evaluData.evaInfo):evaluData.evaInfo}}
+        <text wx:if="{{tools.strLength(evaluData.evaInfo)}}" class="btn_couse" bindtap="beiCourseHander" data-less="{{evaluData.evaInfo}}">{{showAll?'阅读更多':'收起'}}</text>
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view class="xian"></view>
+  <!-- <view class="tishi">
+    提示:长按评论可删除评论。
+  </view> -->
+</view>

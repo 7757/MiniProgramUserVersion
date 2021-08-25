@@ -1,0 +1,90 @@
+.root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+/* 头部布局 */
+.root .pic_top{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin: 32rpx 54rpx 28rpx 50rpx;
+}
+
+/* 头不左侧 */
+ .pic_top .top_letf{
+   margin-right: 300rpx
+ }
+ /* 头部左侧标题 */
+ .pic_top .top_letf .title{
+    font-size:34rpx;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(22,8,10,1);
+    line-height:34rpx;
+    padding-bottom: 14rpx;
+}
+
+/* 头部左侧数字 */
+ .pic_top .top_letf .count{
+    font-size:26rpx;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(22,8,10,1);
+    line-height:26rpx;
+ }
+/* 头部右侧文字 */
+ .root .top_right text{
+  
+    font-size:26rpx;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(22,8,10,1);
+    line-height:26rpx;
+    
+ }
+/* 右侧布局 */
+ .top_right{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+ }
+/* 图标 */
+
+.root .pic_top image{
+  padding-right: 12rpx;
+  width: 26rpx;
+  height: 26rpx
+  
+}
+
+
+
+
+/* 图片布局 */
+.root .pic_list{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap:wrap;
+
+  margin: 20rpx 32rpx;
+}
+
+
+.pic_list .pic_list_item .big{
+  width:  686rpx;
+  height: 512rpx;
+  margin: 7.5rpx 0rpx;
+}
+
+
+.pic_list .pic_list_item .small{
+
+  width: 330rpx;
+  height: 330rpx;
+  margin: 7.5rpx 0rpx;
+
+}

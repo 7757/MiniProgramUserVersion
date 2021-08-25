@@ -1,0 +1,122 @@
+<view class="container">
+
+  <!-- 图文标题部分 -->
+  <view class="">
+    <view class="content">
+      <view class="images item_list">
+        <image class="d_images" src="{{items.schoolimage}}"></image>
+      </view>
+      <view class="d_content item_list">
+        <view class="d_title list">{{items.schoolName}}</view>
+        <view class="d_detail list">【{{items.courseName}}】{{items.introduction}}</view>
+        <view class="d_time list">有效期至{{items.effectivetime}}</view>
+      </view>
+    </view>
+
+    <!-- 价格明细部分 -->
+    <view class="d_price">
+      <view class="dp_titile">费用明细</view>
+      <view class="dp_kap" wx:for="{{items.course}}" wx:key="" data-index="{{index}}">
+        <view class="dp_k">{{item.pname}}</view>
+        <view class="dp_p">￥{{item.price}}</view>
+      </view>
+    </view>
+
+    <!-- 总价 -->
+    <view class="d_sump">
+      <view class="d_sumtitle">总价</view>
+      <view class="d_sumnumber">￥{{items.sumPrice}}</view>
+    </view>
+
+    <view class="transfer_content">
+      <view class="transfer_list">
+        <view>原课程名称</view>
+        <view>初级语法课</view>
+      </view>
+      <view class="transfer_list">
+        <view>课程原价</view>
+        <view>￥{{items.sumPrice}}</view>
+      </view>
+      <view class="transfer_list">
+        <view>剩余课时价格</view>
+        <view>￥{{items.sumPrice}}</view>
+      </view>
+
+    </view>
+    <view class="transfer_content">
+      <view class="transfer_list">
+        <view style="font-weight:600;">差价</view>
+        <view>￥{{items.sumPrice}}</view>
+      </view>
+    </view>
+    <!-- 其他 -->
+    <view class="d_others">
+      <view class="d_click">* 轻触文字查看详情</view>
+      <view class="d_other" wx:for="{{items.other}}" wx:key="" bindtap="otherinfos" data-index="{{index}}">
+        <view class="d_odelati">
+          <text class="d_otitle">{{item.option}}：</text> {{item.optionText}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 地址和联系方式 -->
+    <view class="address">
+      <view class="addheard">
+        <view class="addtitle">{{items.addressName}}</view>
+        <view class="adddelail">{{items.addressInfo}}</view>
+      </view>
+      <view bindtap="bodadianhua" class="addphone {{showModalStatus ? 'addphone_show' : 'addphone_hide'}}">
+        <image class="addimage" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%81%94%E7%B3%BB%E9%97%A8%E5%BA%97%403x.png"></image>
+        <view class="addtext">联系门店</view>
+      </view>
+      <view bindtap="goToShopHander" class="toaddress" class="toaddress {{showModalStatus ? 'toaddress_show' : 'toaddress_hide'}}">
+        <image class="addimage" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E5%88%B0%E8%BF%99%E5%8E%BB%403x.png"></image>
+        <view class="addtext">到这儿去</view>
+      </view>
+    </view>
+    <!-- 订单编号和时间 -->
+    <view style="{{transferStatus?'margin-bottom:140rpx':''}}" class="order">
+      <view class="order_elment">订单编号：
+        <text>{{items.orderNumber}}</text>
+      </view>
+      <view class="order_elment">订单时间：
+        <text>{{items.orderTime}}</text>
+      </view>
+    </view>
+  <!-- 底部按钮
+   -->
+    <view class="bottom_bar">
+      <view class="reset" bindtap="priceDetails">
+        <view class="order_price">总价￥252</view>
+        
+      </view>
+      <view class="next_btn" bindtap="nextHander">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/weChatPay.png"></image>
+        <view>微信支付</view>
+      </view>
+    </view>
+
+
+  </view>
+</view>
+
+
+
+
+
+
+
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus }}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" catchtouchmove="true" class="layer_shown_box" wx:if="{{showModalStatus}}">
+  <view class="top_teacher">
+    <text class="teacher_title">{{title}}</text>
+    <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="scrool_style">
+    <text class="content_info">{{text}}</text>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,182 @@
+<wxs src="../../../utils/subString/subString.wxs" module="tools" />
+
+
+<view class="root">
+  <view class="root_content">
+    <view class="teacher_top">
+      <image class="teacher_heards" src="{{teacherInfo.headPortrait}}" mode="widthFix"></image>
+      <view class="top_itemone">
+        <view bindtap="swiperHander">
+          <text class="name">{{teacherInfo.teacherName}}老师</text>
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/right.png"></image>
+        </view>
+        <view class="join_time">
+          {{teacherInfo.entryTime}} 年加入 {{teacherInfo.shopName}}
+        </view>
+      </view>
+      <view class="top_itemtwo">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/star.png"></image>
+        <text>{{teacherInfo.score}}</text>
+      </view>
+    </view>
+    <view class="teacher_info">
+      {{teacherInfo.selfIntroduc}}
+    </view>
+
+
+
+
+
+
+    <view class="teacher_contenter">
+      <view class="contenter_list ">
+  
+
+        <view class="list_flex">
+          <image class="contentr_imageone" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/master.png"></image>
+          <text class="contenter_font">{{tools.strLengthThears(teacherInfo.major)?tools.subTeachers(teacherInfo.major):teacherInfo.major}}</text>
+        </view>
+        <view bindtap="lookMoreHander" data-type="major" wx:if="{{tools.strLengthThear(teacherInfo.major)}}" class="btn_info">查看更多</view>
+
+
+      </view>
+
+
+      <view class="contenter_list">
+        <view class="list_flex">
+          <image class="contentr_imagetwo" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/education.png"></image>
+          <text class="contenter_font">{{tools.strLengthThears(teacherInfo.graduateSchool)?tools.subTeachers(teacherInfo.graduateSchool):teacherInfo.graduateSchool}}</text>
+        </view>
+        <view bindtap="lookMoreHander" data-type="educa" wx:if="{{tools.strLengthThear(teacherInfo.graduateSchool)}}" class="btn_info">查看更多</view>
+      </view>
+
+
+
+      <view class="contenter_list">
+        <view class="list_flex">
+          <image class="contentr_imagethere" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/honor.png"></image>
+          <text class="contenter_font">{{tools.strLengthThear(teacherInfo.personalHonor)?tools.subTeacher(teacherInfo.personalHonor):teacherInfo.personalHonor}}</text>
+        </view>
+        <view bindtap="lookMoreHander" data-type="award" wx:if="{{tools.strLengthThear(teacherInfo.personalHonor)}}" class="btn_info">查看更多</view>
+      </view>
+
+
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+
+  <view class="teacher_bottom">
+    <!--  {{btnActive===1?'active':''}} -->
+    <view class="btn_class   {{btnActive===1?'active':''}} " bindtap="masterHeander">主要授课</view>
+    <view class="btn_class  {{btnActive===2?'active':''}}" bindtap="detailsHeander">评价</view>
+  </view>
+
+
+  <view bindtap="navClassHander" class="class_bolck" wx:if="{{showType==='class'}}">
+    <view class="class_list" wx:for="{{classList}}" wx:for-item="itemRoot" wx:key="classId">
+      <view class="top_class">
+        <!-- 轮播图 -->
+        <swiper circular="true" class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#F8FAF6">
+          <swiper-item wx:for="{{itemRoot.classPicArry}}" wx:key="index">
+            <image src="{{item}}" style="width:100% "></image>
+          </swiper-item>
+        </swiper>
+
+
+      <!-- 文字部分 -->
+      <view class="body_text">
+        <view class="body_text_1">{{itemRoot.className}}</view>
+        <view class="body_text_2">{{itemRoot.oragnInfo}}。</view>
+        <view class="body_text_3">
+       
+          <block wx:if='{{itemRoot.classStart > 0}}'>
+            <block wx:for='{{itemRoot.classStart-0}}' wx:key='un'>
+               <view class="isnew">
+              <image src='https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513155227.png'></image>
+              </view>
+            </block>
+          </block>
+            <view class="isnew">{{itemRoot.classComments}}条评价</view>
+  
+        </view>
+      </view>
+
+
+      </view>
+      <view class="bootom_class">
+        <view class="class_money">￥{{itemRoot.coursePrice}}</view>
+        <view class="bottom_itemtwo">
+          <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/selection.png"></image>
+          <text> {{itemRoot.clouseDiscount}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view class="comments_contenter" wx:if="{{showType==='details'}}">
+    <view class="comments_list" wx:for="{{commentArry}}" wx:key="commentsId">
+      <view class="comment_top">
+        <image src="{{item.commentHead}}"></image>
+        <view class="comments_top_item">
+          <view class="comments_name">{{item.commentName}}</view>
+          <view class="comments_date">{{item.commentTime}}</view>
+        </view>
+      </view>
+      <view class="comment_bottom">
+        {{item.commentInfo}}
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="bottom_bar">
+    <view class="contact_him" bindtap="nextHander">联系Ta</view>
+  </view>
+
+
+</view>
+
+
+
+
+
+<!-- 教案详情 -->
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="layer_shown_box" wx:if="{{showModalStatus}}">
+  <view class="layer_root">
+    <view class="top_teacher">
+      <text class="teacher_title">{{bigTitle}}</text>
+      <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+      </view>
+    </view>
+    <view class="teaching_plan" catchtouchmove="true">{{smallTitle}}</view>
+    <view class="teaching_details">{{introduction}}</view>
+    <view class="center_teacher">老师</view>
+    <view class="layer_bottom">
+      <view>
+        <image src="{{headPortrait}}" class="teacer_hear"></image>
+      </view>
+      <view class="bottom_right">
+        <view class="teacher_name">{{teacherName}}</view>
+        <view class="teacher_incrment">加入 {{shopName}}时间{{entryTime}} 年，{{classYear}}年教龄 </view>
+      </view>
+    </view>
+  </view>
+</view>
+

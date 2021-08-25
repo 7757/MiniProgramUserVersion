@@ -1,0 +1,971 @@
+page {
+  height: 100%;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.headNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82rpx;
+  margin: 0rpx 46rpx;
+}
+
+.shopImage {
+  width: 12rpx;
+  height: 18rpx;
+  padding-left: 10rpx;
+}
+
+.shopAndDistance {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 更多⻔店信息字体深浅调整 */
+
+.moreshopinfo {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.7);
+  line-height: 24rpx;
+}
+
+/* .头像 与⽼师名，⼊职时间之间的间距 */
+
+.teacher_layout {
+  margin-right: 130rpx;
+}
+
+.shopAdress {
+  padding-right: 14rpx;
+}
+
+.moreInformation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.moreStoreInformation {
+  width: 20rpx;
+  height: 12rpx;
+  padding-left: 12rpx;
+}
+
+.content {
+  height: 392rpx;
+  flex: 1;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  position: relative;
+}
+
+.swiper {
+  height: 392rpx;
+}
+
+.wx-swiper-dots {
+  position: relative;
+  top: 306rpx;
+}
+
+/*预约卡片 */
+
+.cardRoot {
+  position: absolute;
+  width: 678rpx;
+  height: 360rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx 5rpx rgba(238, 237, 237, 0.5);
+  margin-top: 340rpx;
+  margin-left: 36rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* 头像名称上边距 */
+
+.head_name {
+  margin-top: 20rpx;
+}
+
+/* 侧边距 */
+
+.cardRoot view {
+  margin-left: 38rpx;
+}
+
+/* 间距调整*/
+
+.city_name_address {
+  margin-bottom: 60rpx;
+}
+
+/* 头像变圆形 */
+
+.head_portrait {
+  margin-right: 30rpx;
+  height: 56rpx;
+  width: 56rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 预约按钮 */
+
+.makeBtn {
+  width: 600rpx;
+  background-color: #008489;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+/* 详情布局父元素 */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 350rpx;
+}
+
+/*详情*/
+
+.detail {
+  font-size: 46rpx;
+  color: rgba(22, 8, 10, 0.8);
+  font-weight: bold;
+  margin-left: 46rpx;
+  margin-top: 64rpx;
+}
+
+/* 按钮布局 */
+
+.details_btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 54rpx 0rpx 10rpx 46rpx;
+}
+
+/* 控制展示样式按钮 */
+
+.detail_Btn {
+  margin-right: 26rpx;
+  height: 78rpx;
+  background-color: #fff;
+  color: #16080a;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  border: 2rpx solid rgba(223, 223, 223, 1);
+}
+
+/* 控制样式展示按钮，激活时的样式 */
+
+.detail_Btn.active {
+  margin-right: 26rpx;
+  height: 78rpx;
+  background-color: #008489;
+  color: rgb(255, 255, 255);
+  font-size: 26rpx;
+  line-height: 70rpx;
+
+
+
+
+}
+
+button::after {
+  border: none;
+}
+
+/* 新用户进入界面*/
+
+.details .contener {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 图片样式 */
+
+.details .contener .shoutu {
+  width: 636rpx;
+  height: 458rpx;
+  padding-bottom: 30rpx;
+}
+
+/* 图片样式 */
+
+.details .contener .classHours {
+  width: 552rpx;
+  height: 472rpx;
+  margin: 40rpx 46rpx 78rpx 150rpx;
+}
+
+/* 探索按钮 */
+
+.explore_btn {
+  background-color: #fff;
+  border: 4rpx solid #008489;
+  font-size: 28rpx;
+  color: #008489;
+  text-align: center;
+  width: 636rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  margin-bottom: 140rpx;
+}
+
+/*课程卡片的样式 */
+
+.details .contener .class_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 658rpx;
+  height: 378rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 10rpx 20rpx 20rpx 20rpx rgba(238, 237, 237, 0.5);
+  border-radius: 16rpx;
+  margin-top: 35rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.contener:last-child{
+    margin-bottom: 124rpx;
+}
+/* 课程卡头部 */
+
+.details .contener .class_list .list_hader {
+  height: 84rpx;
+  margin-left: 30rpx;
+  padding: 0rpx 28rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 20rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 0.8);
+  line-height: 20rpx;
+}
+
+/* 课程卡头小图标与字体的位置*/
+
+.list_item_top {
+
+  width: 90%;
+  margin: 0 aotu;
+  padding: 0rpx 28rpx;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 20rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 0.8);
+  line-height: 20rpx;
+ 
+  margin-top: 24rpx;
+
+}
+
+.hader_item {
+  margin-top: 14rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15rpx;
+
+  height:32rpx;
+   border-radius:16rpx;
+}
+
+
+/* 课程介绍内的样式 */
+
+.details .contener .class_list .class_details {
+   width: 90%;
+  margin: 0 aotu;
+
+  height: 108rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 1);
+  /* margin-left: 30rpx; */
+  line-height: 52rpx;
+}
+
+/* 取消预约按钮 */
+
+.btn_appointment {
+  width: 144rpx;
+  height: 52rpx;
+  border-radius: 26rpx;
+  border: 2rpx solid rgba(223, 223, 223, 1);
+  font-size: 26rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 0.7);
+  line-height: 52rpx;
+  text-align: center;
+  margin-right: 15rpx;
+}
+
+.keepRecord_btn {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(0, 132, 137, 1);
+  line-height: 28rpx;
+}
+
+
+.keepRecord_btn_hiden {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 0.6);
+  line-height: 28rpx;
+}
+
+
+/* 老师头像 */
+
+.teacher_hears {
+  border-radius: 50%;
+  width: 78rpx;
+  height: 78rpx;
+}
+
+/* 底部老师样式 */
+
+.teach_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 aotu;
+  margin-bottom: 24rpx;
+  margin-top: 26rpx;
+}
+
+/* 老师姓名 */
+
+.teach_info .teach_font {
+  font-size: 24rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 1);
+  line-height: 24rpx;
+}
+
+/* 老师年龄 */
+
+.teach_info .teach_age {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 1);
+  line-height: 20rpx;
+}
+
+/* 剩余课程样式 */
+
+.details .contener .remain_class_hour_list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 660rpx;
+  height: 246rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 10rpx 20rpx 20rpx 20rpx rgba(238, 237, 237, 0.5);
+  border-radius: 16rpx;
+  margin-top: 35rpx;
+  margin-bottom: 4rpx;
+}
+
+/* 剩余课程右侧  布局与字体*/
+
+.details .contener .remain_class_hour_list .remain_class_hour_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 44rpx;
+  margin: 46rpx 30rpx 50rpx 30rpx;
+}
+
+/* 课程题目与介绍 */
+
+/* 超过两行用... */
+
+.remain_class_hour_top {
+  margin-bottom: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 课程图片 */
+
+.details .contener .remain_class_hour_list .remain_class_hour_left image {
+  width: 220rpx;
+  height: 170rpx;
+  border-radius: 14rpx;
+  margin: 38rpx 0rpx 38rpx 32rpx;
+}
+
+/* 小图标 */
+
+.details .contener .remain_class_hour_list .remain_class_hour_right image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+/* 课程时间与节数 */
+
+.details .contener .remain_class_hour_list .remain_class_hour_right .remain_class_hour_bottom {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 354rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.7);
+  line-height: 11rpx;
+}
+
+/* 会员卡顶级容器 */
+
+.contener .vip_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 62rpx;
+}
+
+/*  */
+
+.contener .vip_card .vip_student_number {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-right: 434rpx;
+  margin-bottom: 72rpx;
+}
+
+/* 学员号字 */
+
+.student_number_font {
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 34rpx;
+  margin-bottom: 74rpx;
+}
+
+/* 学员号数 */
+
+.student_number {
+  font-size: 28rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 1);
+  line-height: 28rpx;
+}
+
+/* 二维码介绍 与二维码布局*/
+
+.contener .vip_card .qr_introduce {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 54rpx;
+  margin-left: 46rpx;
+  margin-right: 46rpx;
+}
+
+/* 二维码 */
+
+.contener .vip_card .qr_introduce .qr_code_font {
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 二维码介绍 */
+
+.contener .vip_card .qr_introduce .qr_code_info {
+  font-size: 28rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(22, 8, 10, 1);
+  line-height: 38rpx;
+}
+
+/* 包裹二维码的容器布局 */
+
+.contener .vip_card .qr_code {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 670rpx;
+  height: 728rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 10rpx 20rpx 20rpx 20rpx rgba(238, 237, 237, 0.5);
+  border-radius: 20rpx;
+  margin-bottom: 34rpx;
+}
+
+/* 二维码尺寸 */
+
+.contener .vip_card .qr_code .qr_code_code {
+  width: 492rpx;
+  height: 490rpx;
+  margin-bottom: 70rpx;
+}
+
+/*刷新按钮布局 */
+
+.contener .vip_card .qr_code .refresh_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 刷新按钮尺寸 */
+
+.contener .vip_card .qr_code .refresh_btn .qr_code_refresh {
+  width: 24rpx;
+  height: 24rpx;
+  padding-right: 8rpx;
+  margin-top: 2rpx;
+}
+
+/* 刷新字体 */
+
+.refresh_button {
+  width: 48rpx;
+  height: 28rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.7);
+  line-height: 28rpx;
+}
+
+/*弹出层 */
+
+/*使屏幕变暗  */
+
+.layer_shown {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.layer_shown_box {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+/*弹出层布局 */
+
+.layer_shown_box .layer_root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0rpx 0rpx 0rpx 46rpx;
+}
+
+.layer_root .top_teacher {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 34rpx;
+  margin-bottom: 90rpx;
+}
+
+.layer_root .top_teacher image {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 20rpx;
+}
+
+.layer_root .top_teacher .block {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.layer_root .teaching_plan {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 30rpx;
+  margin-bottom: 52rpx;
+}
+
+.layer_root  .teaching_details {
+  width: 660rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 54rpx;
+
+}
+
+.layer_root .center_teacher {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 30rpx;
+  margin-top: 34rpx;
+  margin-bottom: 56rpx;
+}
+
+.layer_root .teacher_bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.layer_root .teacher_bottom .bottom_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.teacer_hear {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+  margin-right: 22rpx;
+}
+
+.teacher_name {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 30rpx;
+  margin-bottom: 12rpx;
+}
+
+.teacher_incrment {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 26rpx;
+}
+
+/* ----------课程通知----------- */
+
+.course_notice {
+  width: 658rpx;
+  height: 76rpx;
+  background-color: rgba(89, 89, 89, 0.7);
+  border-radius: 16rpx;
+  position: fixed;
+  bottom: 20rpx;
+  left: 46rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+.course_notice_text {
+  padding-left: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(243, 241, 242, 1);
+  line-height: 76rpx;
+}
+
+/* 开启按钮 */
+
+.course_notice_btn {
+  text-align: center;
+  width: 108rpx;
+  height: 50rpx;
+  background: rgba(19, 189, 196, 1);
+  border-radius: 26rpx;
+  margin-left: 116rpx;
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 50rpx;
+}
+
+.course_notice image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 31rpx;
+  padding: 15rpx;
+}
+
+/* 课表圆圈 */
+.timetable_content {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 138rpx;
+  right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 4rpx 14rpx 2rpx rgba(239, 238, 238, 1);
+  border: 4rpx solid rgba(255, 255, 255, 1);
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.timetable_content image {
+  width: 34rpx;
+  height: 32rpx;
+  margin-top: 24rpx;
+}
+
+
+
+
+
+
+
+
+
+/* 模态框开始 */
+.modal-mask{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 9000;
+  top:0;
+  left: 0;
+  overflow: hidden;
+  color: #fff;
+}
+.modal-dialog{
+  width:80%;
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  z-index: 9999;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #f9f9f9;
+  border-radius: 10rpx;
+}
+.modal-title{
+  text-align: center;
+  margin: 20rpx 0;
+
+}
+.modal-content{
+  min-height: 150rpx;
+  margin: 50rpx 32rpx;
+}
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-footer button::after{
+  width: 50%;
+  border: none;
+  border-radius: 0;
+}
+.modal-footer button:nth-child(1){
+  border-right: 1px solid #eeeeee;
+  display: block;
+  width: 50%;
+}
+.modal-footer button{
+  width: 50%;
+}
+/* 模态框结束 */
+
+
+/* 内部布局 */
+
+/* 距离提示框 */
+
+.mask_layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.modal_box {
+  width: 80%;
+  overflow: hidden;
+  position: fixed;
+  top: 54%;
+  left: -18rpx;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -80% 12% 0 12%;
+  border-radius: 5px;
+}
+
+.titles {
+  padding:10px 15px 10px 15px;
+  text-align: center;
+  background-color: gazure;
+  font-size:30rpx;
+  font-weight:600;
+  color:rgba(22,8,10,1);
+  line-height:45rpx;
+
+}
+
+.contentsss{
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+
+.btn1 {
+  width: 100%;
+  margin-top: 65rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  
+  background-color: white;
+}
+
+.cancel {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-weight:600;
+  border-top: 1px solid #d0d0d0;
+}
+
+.Sure {
+  width: 100%;
+  padding: 10px;
+  color: #f1d4ae;
+  background-color: white;
+  border-left: 1px solid #d0d0d0;
+  text-align: center;
+  font-weight:600;
+  border-top: 1px solid #d0d0d0;
+}
+
+.modalMsg {
+  text-align: center;
+  margin-top: 45rpx;
+  display: block;
+}
+
+
+
+/* 点击动画 */
+
+.wsui-btn__hover_list {
+  opacity: 0.9;
+  transform: scale(1.06, 1.06);
+}
+
+/* 剩余课时下间距 */
+.center_teacher_hours{
+
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 30rpx;
+  margin-top: 34rpx;
+  margin-bottom: 40rpx;
+}
+
+::-webkit-scrollbar {
+width: 0;
+height: 0;
+color: transparent;
+display: none;
+}

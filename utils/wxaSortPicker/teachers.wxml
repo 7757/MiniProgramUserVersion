@@ -1,0 +1,89 @@
+<template name="wxaSortPicker">
+  <scroll-view class="wxaSortPickerList" scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight}}px;" bindscrolltoupper="wxaSortPickerUpper" bindscrolltolower="wxaSortPickerLower" bindscroll="wxaSortPickerScroll" scroll-into-view="{{wxaSortPickerData.wxaSortPickertoView}}">
+    <block wx:for="{{wxaSortPickerData.textData}}" wx:for-item="item" wx:key="">
+      <view id="{{item.tag}}" class="wxaSortPickerTag">{{item.tag}}</view>
+      <view class='wxaSortPickerItem-box'>
+        <template is="wxaSortPickerItem" data="{{item,dataType}}" />
+      </view>
+    </block>
+  </scroll-view>
+  <template is="wxaSortPickerTemTags" />
+</template>
+
+<template name="wxaSortPickerItem">
+  <block wx:if='{{dataType == "object"}}'>
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+      <view class="wxaSortPickerItem" data-text="{{child.name}}" data-value="{{child.value}}" catchtap="wxaSortPickerItemTap">
+        <view class="body_main" bindtap="navTeacherHander">
+
+          <!-- 轮播图部分 -->
+          <swiper indicator-dots="true" autoplay="true" interval="3000" indicator-color='#fff' indicator-active-color='#999' duration="1000" circular='true' class='ibanner'>
+            <swiper-item>
+              <navigator url='点击跳转路径' open-type='switchTab'>
+                <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg" class="slide-image" mode="widthFix" />
+              </navigator>
+            </swiper-item>
+            <swiper-item>
+              <navigator url='点击跳转路径' open-type='switchTab'>
+                <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test3.jpg" class="slide-image" mode="widthFix" />
+              </navigator>
+            </swiper-item>
+            <swiper-item>
+              <navigator url='点击跳转路径' open-type='switchTab'>
+                <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test6.jpg" class="slide-image" mode="widthFix" />
+              </navigator>
+            </swiper-item>
+            <swiper-item>
+              <navigator url='点击跳转路径' open-type='switchTab'>
+                <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test4.jpg" class="slide-image" mode="widthFix" />
+              </navigator>
+            </swiper-item>
+          </swiper>
+
+          <!-- 文字部分 -->
+          <view class="body_text">
+            <view class="body_text_1">{{child.name}}</view>
+            <view class="body_text_2">我是 EF 英孚教育老师傅鹏，很高兴能有机会能和同学们一起上课。</view>
+            <view class="body_text_3">
+              <view class="body_text_3_1">入职EF英孚英语2年</view>
+              <view class="body_text_3_2">教龄5年</view>
+              <view class="body_text_3_3">超赞老师</view>
+            </view>
+
+
+            <view class="p_body_sp">
+              <view class="p_body_xing">
+                <image   class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%E6%98%9F-01%20copy%204%402x.png"></image>
+                <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%E6%98%9F-01%20copy%204%402x.png"></image>
+                <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%E6%98%9F-01%20copy%204%402x.png"></image>
+                <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%E6%98%9F-01%20copy%204%402x.png"></image>
+                <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%E6%98%9F-01%20copy%204%402x.png"></image>
+                (28条评价)
+              </view>
+            </view>
+
+          </view>
+
+
+
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+      <view class="wxaSortPickerItem" data-text="{{child}}" catchtap="wxaSortPickerItemTap">
+        {{child}}
+      </view>
+    </block>
+  </block>
+
+</template>
+
+<template name="wxaSortPickerTemTags">
+  <scroll-view style="width:20px;height: {{wxaSortPickerData.view.scrollHeight}}px;" class="wxaSortPickerTemTags">
+    <block wx:for="{{['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '#']}}" wx:for-item="item" wx:key="">
+      <view bindtap="wxaSortPickerTemTagTap" data-tag="{{item}}" class="wxaSortPickerTemTag">{{item}}</view>
+    </block>
+  </scroll-view>
+</template>

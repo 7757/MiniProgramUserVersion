@@ -1,0 +1,48 @@
+.root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(22,8,10,1);
+  line-height:36rpx;
+  letter-spacing:4rpx;
+  margin: 20rpx 46rpx;
+
+}
+/* 右箭头 */
+.ioc{
+  width:10rpx;
+  height:20rpx;
+}
+
+/* 大标题 */
+.title_item{
+
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(22,8,10,1);
+  line-height:30rpx;
+
+}
+
+.view_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 34rpx;
+}
+
+.distance{
+  margin-bottom: 50rpx;
+}

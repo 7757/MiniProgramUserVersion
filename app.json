@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/annal/evalu/evalu",
+  
+    "pages/home/amtCourse/amtCourse",
+    "pages/home/timeTable/timeTable",
+    "pages/home/moreStores/moreStores",
+    "pages/home/moreStores/choiceArea/choiceArea",
+    "component/menuTable/menuTable",
+    "pages/school/cinfo/cinfo",
+    "pages/users/users",
+    "pages/users/info/info",
+    "pages/annal/annal",
+    "pages/school/teacherInfo/teacherInfo",
+    "pages/school/school",
+    "pages/users/service/service",
+    "pages/users/hisorder/transferClass/transferClass",
+    "pages/school/teacher/teacher",
+    "pages/home/amtCourse/selectTime/selectTime",
+    "pages/school/allPictures/allPictures",
+    "pages/home/shopDetails/shopDetails",
+    "pages/annal/evaluLook/evaluLook",
+    "pages/school/orderdetails/orderdetails",
+    "pages/annal/appraise/appraise",
+    "pages/users/hisorder/hisorder",
+    "pages/users/hisorder/details/details",
+    "pages/annal/addTime/addTime",
+    "pages/home/amtCourse/addTeacher/addTeacher",
+    "pages/users/favorite/favorite",
+    "pages/logs/logs",
+    "pages/home/allPictures/allPictures",
+    "pages/school/assess/assess",
+    "pages/school/search/search",
+    "pages/home/shopPhotoInfo/shopPhotoInfo",
+    "pages/users/hisorder/map/map",
+    "pages/school/cinfo/shopDetailPrice/shopDetailPrice"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#777777",
+    "selectedColor": "#16080a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "学员卡",
+        "iconPath": "assets/tabs/StudentCardUdentcard.png",
+        "selectedIconPath": "assets/tabs/StudentCardActivate.png"
+      },
+      {
+        "pagePath": "pages/school/school",
+        "text": "school",
+        "iconPath": "assets/tabs/schoolNoActivate.png",
+        "selectedIconPath": "assets/tabs/schoolActivate.png"
+      },
+      {
+        "pagePath": "pages/annal/annal",
+        "text": "记录",
+        "iconPath": "assets/tabs/recordNoActivate.png",
+        "selectedIconPath": "assets/tabs/recordActivate.png"
+      },
+      {
+        "pagePath": "pages/users/users",
+        "text": "我",
+        "iconPath": "assets/tabs/myNoactive.png",
+        "selectedIconPath": "assets/tabs/myActivate.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息将用于获取您周边店铺距您的距离"
+    }
+  }
+}

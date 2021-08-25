@@ -1,0 +1,731 @@
+.zhutu {
+  height: 496rpx;
+  width: 100%;
+}
+
+.c_title_bady {
+  width: 90%;
+  margin: 0rpx auto;
+  position: relative;
+}
+
+.c_shouc {
+  text-align: center;
+  width: 88rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(210, 208, 208, 0.5);
+  position: absolute;
+  top: -15px;
+  transform: translateY(-50%);
+  right: 150rpx;
+}
+
+.c_fenxiang {
+  text-align: center;
+  width: 88rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0rpx rgba(210, 208, 208, 0.5);
+  position: absolute;
+  top: -28rpx;
+  transform: translateY(-50%);
+  right: 20rpx;
+}
+
+.csimage {
+  width: 34rpx;
+  height: 30rpx;
+  border: 0rpx solid rgba(53, 53, 53, 1);
+}
+
+.cfimage {
+  width: 30rpx;
+  height: 28rpx;
+  border: 0rpx solid rgba(53, 53, 53, 1);
+}
+
+.c_title {
+  margin-top: 16rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.c_desc {
+  margin-top: 12rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 44rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.pnum {
+  margin-top: 30rpx;
+  width: 198rpx;
+  height: 50rpx;
+  background: rgba(233, 247, 234, 1);
+  border-radius: 26rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: rgba(51, 92, 26, 1);
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.c_descs {
+  margin-top: 64rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(53, 53, 53);
+}
+
+.class_fuwu {
+  position: relative;
+  margin-top: 56rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.server_item {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.class_ioc {
+  margin-left: 20rpx;
+  width: 24rpx;
+  height: 26rpx;
+}
+
+.class_1 {
+  margin-left: 22rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+}
+
+.class_num {
+  position: absolute;
+  right: 60rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+}
+
+.class_desc {
+  margin-left: 66rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.6);
+  line-height: 34rpx;
+}
+
+.xian {
+  margin: 0rpx auto;
+  width: 90%;
+  height: 2rpx;
+  background-color: #efeeee;
+}
+
+.pj {
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.p_title {
+  margin-top: 56rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.p_header {
+  display: flex;
+  margin-top: 56rpx;
+  position: relative;
+}
+
+.p_avater {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+
+.p_name {
+  margin-left: 22rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.p_time {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  position: absolute;
+  top: 50rpx;
+  left: 120rpx;
+}
+
+.p_body {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.p_body_sp {
+  display: flex;
+  position: relative;
+}
+
+.p_body_htn {
+  margin-top: 66rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.8);
+}
+
+.p_body_xing {
+  display: flex;
+  position: absolute;
+  right: 20rpx;
+  top: 76rpx;
+}
+
+.xing {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.xingPrice {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.p_number {
+  margin-top: -1%;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  margin-left: 6rpx;
+}
+
+.tw_desc {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.tw_title {
+  margin-top: 50rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 0.8);
+}
+
+.tw_descs {
+  margin-top: 76rpx;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.6);
+  line-height: 44rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.tw_image {
+  width: 100%;
+  height: 438rpx;
+}
+
+.the_info {
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.the_title {
+  display: flex;
+  margin-top: 86rpx;
+  position: relative;
+}
+
+.the_title_1 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 0.8);
+}
+
+.the_title_2 {
+  position: absolute;
+  right: 5%;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(21, 127, 131);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-header {
+  margin-top: 58rpx;
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+
+.view_name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.wrap1 {
+  margin-left: 5%;
+}
+
+.text {
+  width: 318rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 0rpx 14rpx 12rpx rgba(222, 220, 220, 0.25);
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  color: rgba(22, 8, 10, 1);
+  display: inline-block;
+  white-space: normal;
+  height: 414rpx;
+  margin-bottom: 20rpx;
+}
+
+.scroll_image {
+  width: 318rpx;
+  height: 212rpx;
+  border-radius: 8rpx;
+}
+
+.scroll_the {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 0.8);
+}
+
+.scroll_desc {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(53, 53, 53);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.pingf {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.lxqt {
+  width: 26rpx;
+  height: 24rpx;
+}
+
+.ma_info {
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.d_others {
+  width: 100%;
+  padding-bottom: 200rpx;
+}
+
+.d_other {
+  margin: 38rpx 0;
+}
+
+/* 杂项title */
+
+.d_otitle {
+  font-size: 26rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+/* 杂项说明 */
+
+.d_odelati {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  color: rgba(22, 8, 10, 1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 查看全部 */
+
+.d_click {
+  margin-top: 25rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(50, 133, 139, 1);
+}
+
+/*************************************显示和隐藏的弹框********************************************/
+
+.weui-demo-dialog {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.weui-half-screen-dialog {
+  transition: all 0.3s;
+  transform: translateY(100%);
+}
+
+.weui-demo-dialog_show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.weui-demo-dialog_show .weui-half-screen-dialog {
+  transform: translateY(0);
+}
+
+.weui-half-screen-dialog__title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+}
+
+.weui-half-screen-dialog__desc {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+}
+
+.weui-half-screen-dialog__tips {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 54rpx;
+}
+
+.addphone_show {
+  visibility: hidden;
+  transition: all 0.1s;
+}
+
+.toaddress_show {
+  visibility: hidden;
+  transition: all 0.1s;
+}
+
+.addphone_hide {
+  visibility: visible;
+  transition: all 1s;
+}
+
+.toaddress_hide {
+  visibility: visible;
+  transition: all 1s;
+}
+
+.mai {
+  display: flex;
+  position: fixed;
+  bottom: 0.1px;
+  width: 100%;
+  height: 164rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 2rpx 8rpx 2rpx rgba(195, 194, 194, 0.5);
+}
+
+.infos {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+}
+
+.infos_price {
+  display: flex;
+}
+
+.newprice {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 28rpx;
+}
+
+.oldprice {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 0.6);
+  text-decoration: line-through;
+  line-height: 26rpx;
+}
+
+.maibtn {
+  width: 160rpx;
+  height: 96rpx;
+  background: rgba(248, 98, 96, 1);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 96rpx;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+}
+
+.pnumber2 {
+  font-size: 22rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+}
+
+.the_title_2 image {
+  margin-left: 12rpx;
+  width: 12rpx;
+  height: 26rpx;
+}
+
+/* 悬浮 */
+
+.like_collection {
+  width: 214rpx;
+  height: 92rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 46rpx;
+  box-shadow: 0px 0px 12rpx 0rpx rgba(210, 208, 208, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  right: 60rpx;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  font-size: 28rpx;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+/* 查看全部评价布局 */
+
+.eva_content {
+  margin-top: 58rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.look_eva {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 30rpx;
+}
+
+.eva_content image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.scop_info {
+  font-size: 22rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 22rpx;
+}
+
+.eva_list_item {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.xingss {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+/* .ping_list{
+    display:  flex;
+  align-items: center;
+  justify-content: center;
+}
+.view_name{
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+
+} */
+
+/* 弹出层 */
+
+/*使屏幕变暗  */
+
+.layer_shown {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.layer_shown_box {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+/* 内容信息 */
+
+.content_info {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 40rpx;
+}
+
+.scrool_style {
+  height: 800rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+}
+
+/* 标题 */
+
+.top_teacher {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+  line-height: 34rpx;
+  margin-bottom: 90rpx;
+}
+
+/* 按钮 */
+
+.top_teacher image {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 20rpx;
+}
+
+.teacher_title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 1);
+}
+
+.stat_list {
+  margin-top: -10rpx;
+}
+
+.look_more {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(0, 132, 137, 1);
+  line-height: 28rpx;
+}
+
+.problem_title {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+  line-height: 28rpx;
+}
+
+.content_info_problem {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 28rpx;
+}

@@ -1,0 +1,317 @@
+<wxs src="../../../utils/subString/subString.wxs" module="tools" />
+
+
+
+<view>
+  <!-- 主图 -->
+  <view bindtap="lookPrickHander">
+    <image class="zhutu" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test4.jpg"></image>
+  </view>
+
+  <!-- 标题及详情部分 -->
+  <view class="c_title_bady">
+
+
+  <view wx:if="{{!changeStatus}}">
+      <view bindtap="likeItHander" class="c_shouc">
+      <image class="csimage" src="{{likeStatus?'https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/17d0b2bb9d59bcb7115c682d49ef045.png':'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%94%B6%E8%97%8F%403x.png'}}"></image>
+    </view>
+    <button class="c_fenxiang" open-type='share'>
+      <image class="cfimage" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E5%88%86%E4%BA%AB%403x.png"></image>
+    </button>
+  
+  </view>
+
+
+
+
+
+
+    <!-- 小标题 -->
+    <view class="c_title">初级语法课</view>
+    <!-- 详情省略第四行 -->
+    <view class="c_desc">蓝湖是一款产品文档和设计图的共享平台,帮助互联网团队更好地管理文档和设计图。蓝湖可以在线展示Axure,自动生成设计图标注,与团队共享设计图,展示页面之间的跳转关系</view>
+    <!-- 评分 和 评论数 -->
+    <view class="pnum">4.8分·18条评论</view>
+    <!-- 课程详情标题 -->
+    <view class="c_descs">课程详情</view>
+
+    <view>
+      <view class="class_fuwu">
+        <view class="server_item">
+          <image class="class_ioc" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%AF%BE%E7%A8%8B%E5%9B%BE%E6%A0%87%403x.png"></image>
+        </view>
+        <view class="server_item class_1">课程：青少年英语</view>
+        <view class="server_item class_num">10节</view>
+      </view>
+
+
+      <view class="class_desc">冰岛蓝湖地热温泉位于冰岛西南部,是相当难得的地热+火山型渡假圣地,由于地下岩浆活动频繁,便蓝湖被终年加热,水体蒸腾礁湖地区水温平均在40 ℃左右。冰天雪地中,湖里</view>
+
+      <view class="class_fuwu">
+        <view  class="server_item" >
+          <image class="class_ioc" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%9C%8D%E5%8A%A1%403x.png"></image>
+        </view>
+        <view class="class_1 server_item">服务：商户自定义</view>
+        <view class="class_num server_item">1份</view>
+      </view>
+
+
+      <view class="class_desc">服务123是一款致力于全民技能上线以及社交的一款APP,随着电商社交、视频社交的大趋势发展,服务123致力于技能社交,让更多的人在平台绽放自己的风采,同时还能扩宽自己的</view>
+    </view>
+
+
+
+
+  </view>
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 50rpx;"></view>
+
+  <!-- 评价部分 -->
+  <view class="pj">
+    <view class="p_title">评价</view>
+    <!-- 头像 昵称 日期 -->
+    <view class="p_header">
+      <view>
+        <image class="p_avater" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+      </view>
+      <view class="p_name">喜羊羊</view>
+      <view class="p_time">2019 年 11 月 12 日</view>
+    </view>
+    <!-- 评价内容 省略第三行-->
+    <view class="p_body">2小时前 - 导读:武磊进球打破历史,在西甲91年的历史上,第一次有了中国球员攻破巴萨的大门,孟非大赞武磊:低调中前进更让人多了一份赞赏!</view>
+
+
+
+    <view class="eva_content">
+      <view bindtap="looksou" class="look_eva eva_list_item">查看全部18条评价</view>
+
+
+      <view class=" look_eva eva_list_item">
+        <view>
+          <image wx:for="{{4}}" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+        </view>
+        <view class=" scop_info"> 4.38</view>
+        <!-- <view class="view_name">
+          
+        </view> -->
+
+      </view>
+
+      <!-- <view class=" scop_info eva_list_item">
+       
+
+      </view> -->
+
+
+    </view>
+
+
+
+
+  </view>
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 50rpx;"></view>
+
+  <!-- 图文详情 -->
+  <view class="tw_desc">
+    <view class="tw_title">图文详情</view>
+
+    <view class="tw_descs">1天前 - 引言今天上午,中国足协在北京新一届中国男足国家队主教练李铁召开了正式上任之后的就职见面会,这也是李铁执掌国足后第一次公开亮相。李铁有点激动地表</view>
+
+    <view style="margin-top: 68rpx;">
+      <image class="tw_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+      <image class="tw_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test2.jpg"></image>
+      <image class="tw_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test3.jpg"></image>
+      <image class="tw_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test5.jpeg"></image>
+      <image class="tw_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test6.jpg"></image>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 76rpx;"></view>
+
+
+  <!-- 老师介绍 -->
+  <view class="the_info">
+    <view class="the_title">
+      <view class="the_title_1">老师介绍</view>
+      <view bindtap="mthe" class="the_title_2">更多老师 +16
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-x class="scroll-header">
+    <view class="wrap1">
+      <view class="text" bindtap="navTeacherDeatils">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="text">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="text">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="text">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="text">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="text">
+        <image class="scroll_image" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/mycoll/test1.jpg"></image>
+        <view style="width:90%;margin:0px auto;">
+          <view class="scroll_the">李杰老师</view>
+          <view class="scroll_desc">我是 EF 英孚教育老师傅 鹏，文字文字文字文字文字文字文字文字</view>
+          <view class="pingf">
+            <view class="ping_list">
+              <image class="xingss" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E8%AF%84%E5%88%86%E6%98%9F%402x.png"></image>
+            </view>
+            <view class="ping_list"> 4.39（28条）</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 72rpx;"></view>
+
+  <view class="the_info" style="margin-top: 56rpx;">
+    <image class="lxqt" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E8%81%94%E7%B3%BB%E5%89%8D%E5%8F%B0%403x.png"></image>
+    联系前台
+  </view>
+
+
+  <!-- 分割线 -->
+  <view class="xian" style="margin-top: 58rpx;"></view>
+
+
+  <!-- 常见问题 -->
+  <view class="the_info">
+    <view class="ma_info">常见问题</view>
+
+
+    <!-- 其他 -->
+    <view class="d_others">
+      <view class="d_other" wx:for="{{items.other}}" wx:key="{{index}}">
+        <view class="problem_content">
+          <view>
+            <text class="problem_title">{{item.option}}：</text>
+            <text class="content_info_problem">{{tools.strLengthProblem(item.optionText)?tools.subProblem(item.optionText):item.optionText}}</text> </view>
+          <view wx:if="{{tools.strLengthProblem(item.optionText)}}" class="look_more" bindtap="otherinfos" data-index="{{index}}">查看更多</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <!-- 价格及购买 -->
+  <view class="mai">
+    <view class="infos">
+      <view class="infos_price">
+        <view class="newprice">￥252</view>
+        <view class="oldprice">363</view>
+      </view>
+      <view class="pnumber2">18条评价</view>
+      <view class="stat_list">
+        <image class="xingPrice" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513161425.png"></image>
+        <image class="xingPrice" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513161425.png"></image>
+        <image class="xingPrice" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513161425.png"></image>
+        <image class="xingPrice" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513161425.png"></image>
+        <image class="xingPrice" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200513161425.png"></image>
+      </view>
+    </view>
+    <view class="maibtn" bindtap="purchaseHander">购买</view>
+  </view>
+</view>
+
+<!-- 悬浮分享与收藏 -->
+<view class="like_collection" animation="{{suspension}}"  wx:if="{{changeStatus}}">
+  <view class="ss" bindtap="likeItHander">
+    <image class="csimage" src="{{likeStatus?'https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/17d0b2bb9d59bcb7115c682d49ef045.png':'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%94%B6%E8%97%8F%403x.png'}}"></image>
+  </view>
+  <button class="ss" open-type='share'>
+    <image class="cfimage" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E5%88%86%E4%BA%AB%403x.png"></image>
+  </button>
+</view>
+
+
+
+
+
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus }}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" catchtouchmove="true" class="layer_shown_box" wx:if="{{showModalStatus}}">
+  <view class="top_teacher">
+    <text class="teacher_title">{{title}}</text>
+    <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="scrool_style">
+    <text class="content_info">{{text}}</text>
+  </scroll-view>
+
+</view>

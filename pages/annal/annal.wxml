@@ -1,0 +1,261 @@
+<wxs src="../../utils/subString/subString.wxs" module="tools" />
+
+
+<view class="top_position">
+  <view class="title_top">成长的历程</view>
+  <view class="title_details">孩子每次进步的过程，我们都会为您点滴记录。</view>
+  <view catchtouchmove="preventTouchMove" class=" weui-demo-dialog layer_tess {{changeStatus ? 'weui-demo-dialog_show' : ''}}">
+    <!-- 遮罩 -->
+    <view class="btn_list">
+      <!-- 按钮 -->
+      <scroll-view scroll-x="true" class="scroll_class btn_tess" style="width: 100%">
+
+        <!-- 老师 -->
+        <view class=" btn_item {{selectedTeacher!='老师'?'active':''}} " hover-class="wsui-btn__hover_list" bindtap="chenckTeacherHander" data-type="teacherType">{{selectedTeacher}}
+          <block wx:if="{{selectedTeacher!='老师'}}">
+            <image data-type="teacherType" catchtap="removeHander" catchtap="removeHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+
+        <!-- 时间 -->
+        <view class="btn_item {{selectedDate!='时间'?'active':''}} " hover-class="wsui-btn__hover_list" bindtap="chenckTimeHander">{{selectedDate}}
+          <block wx:if="{{selectedDate!='时间'}}">
+            <image data-type="dateType" catchtap="removeHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+
+        <!-- 课程 -->
+        <view class="btn_item  {{selectedCourse!='课程'?'active':''}}  " hover-class="wsui-btn__hover_list" bindtap="chenckClassHander" data-type="courseType">{{selectedCourse}}
+          <block wx:if="{{selectedCourse!='课程'}}">
+            <image data-type="ccourseType" catchtap="removeHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+        <!-- 校区 -->
+        <view class="btn_item  {{selectedSchool!='校区'?'active':''}} " style=" margin-right: 50rpx; " hover-class="wsui-btn__hover_list" bindtap="chenckSchoolHander" data-type="schoolType">{{selectedSchool}}
+          <block wx:if="{{selectedSchool!='校区'}}">
+            <image data-type="schoolType" catchtap="removeHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+      </scroll-view>
+
+      <view class="btn_tesss">
+        <!-- 新的评价 -->
+        <view class="{{conterStatus?'btn_change':''}}  btn_item {{selectedEvame!='评语'?'active':''}} " hover-class="wsui-btn__hover_list" bindtap="allEvameHander" data-type="EvameType">{{selectedEvame}}·3
+          <block wx:if="{{selectedEvame!='评语'}}">
+            <image catchtap="removeStudentHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+        <!-- 回复 -->
+        <view class=" {{reponseStatus?'btn_change':''}} btn_item {{selectedRepoe!='回复'?'active':''}} " hover-class="wsui-btn__hover_list" bindtap="allRepoeHander" data-type="RepoeType">{{selectedRepoe}}·5
+          <block wx:if="{{selectedRepoe!='回复'}}">
+            <image catchtap="removeRepoeHander" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/d096781c2e767be7f86261fc4f23f60.png"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+</view>
+
+
+
+
+
+<view class="root">
+  <!-- 记录次数 -->
+  <view class="annal_number">
+    <view class="jiaoyin">150次脚印</view>
+    <view class="tw">
+      <image class="qximag" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%9B%B2%E7%BA%BF%403x.png" />
+      <view class="qxtext">曲线</view>
+    </view>
+  </view>
+  <!-- 信息主体 -->
+  <view class="list_body" wx:for="{{teacherArray}}" wx:key="id">
+    <view class="list_item_top">
+      <view class="  {{selectedDate!='时间'?'header_item_active':'hader_item'}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classTime.png" style=" width: 20rpx; height: 22rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+        <view style="vertical-align:middle;padding-right: 10rpx;">{{item.classTime}}</view>
+      </view>
+      <view class=" {{selectedCourse!='课程'?'header_item_active':'hader_item'}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/className.png" style=" width: 20rpx; height: 20rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+        <view style="vertical-align:middle;padding-right: 10rpx;">{{tools.subClassIn(item.className)}}</view>
+      </view>
+      <view class=" {{selectedSchool!='校区'?'header_item_active':'hader_item'}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/classRoom.png" style="width: 22rpx; height: 24rpx;padding-right: 10rpx;padding-left: 10rpx"></image>
+        <view style="vertical-align:middle;padding-right: 10rpx;">{{tools.subSchoolIn(item.schoolArea)}}</view>
+      </view>
+    </view>
+    <view class="list_item_center">
+      <text>{{item.classInfo}}</text>
+      <!-- wx:if="{{condition}}" -->
+      <text class="keepRecord_btn" bindtap="keepOnRecord" data-index="{{index}}">查看更多教案信息</text>
+      <view>{{item.calssEvaluate.length>0?item.calssEvaluate:'课程评价课程评价课程评价课程评价课程评价'}}</view>
+      <!-- wx:if="{{condition}}" -->
+      <text class="keepRecord_btn  {{item.calssEvaluate.length>0?'keepRecord_btn':'keepRecord_btn_hiden'}}" bindtap="keepOnComment" data-eva="{{item.calssEvaluate}}" data-index="{{index}}">查看完整评语</text>
+    </view>
+    <view class="list_item_bottom">
+      <view>
+        <image class="teacher_hears" src="{{item.classTeacherHead}}"></image>
+      </view>
+      <view class="teacher_layout">
+        <view class="teach_font">
+          <view class="teacher_name list_teacher">{{item.teacherName}}</view>
+          <view class="teacher_student list_teacher" style="  width:84rpx;height:30rpx; ">成绩{{item.achievement}}</view>
+          <view class="teacher_student list_teacher" style="  width:126rpx;height:30rpx; ">排名前{{item.ranking}}%</view>
+        </view>
+        <view class="teach_age">
+          <text>{{item.entryTime}}年入职</text>
+          <text style="  margin-left: 12rpx;">{{item.teachingAgeA}}年教龄</text>
+        </view>
+      </view>
+      <view class="bottom_info" bindtap="commentHander" data-index="{{index}}" data-count="{{item.evaluateResponeStatus}}" data-evaluate="{{item.evaluateStatus}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/fbc484d7e8c1ea81d5a46c17ba238d6.png" style="width: 38rpx; height: 38rpx;">
+        </image>
+        <view wx:if="{{item.evaluateResponeStatus>=1}}" class="tips">
+          <view class="tips-text">
+            {{item.evaluateResponeStatus}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<!-- 老师 -->
+<!-- 弹框 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrue3 ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayer3"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">课程老师</view>
+      <view bindtap="closeLayer3" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{teacherArray}}" wx:key="index" data-index="{{index}}">
+          <view>{{item.teacherName}}</view>
+          <radio value="{{item.teacherName}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHander3">确定</view>
+  </view>
+</view>
+
+
+<!-- 课程 -->
+<!-- 弹框 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrue1 ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayer1"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">课程</view>
+      <view bindtap="closeLayer1" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{teacherArray}}" wx:key="id" data-index="{{index}}">
+          <view>{{item.className}}</view>
+          <radio value="{{item.className}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHander1">确定</view>
+  </view>
+</view>
+
+
+<!-- 弹框 -->
+<view catchtouchmove="preventTouchMove" class="weui-demo-dialog {{istrue2 ? 'weui-demo-dialog_show' : ''}}">
+  <!-- 遮罩 -->
+  <view class="weui-mask" bindtap="closeLayer2"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="tk_title">
+      <view class="tk_biaoti">校区</view>
+      <view bindtap="closeLayer2" class="weui-icon-btn weui-icon-btn_close"></view>
+    </view>
+
+    <scroll-view scroll-y="true" style="height: 500rpx;" class="tkdx">
+      <radio-group class="radio_group" bindchange="choseItem">
+        <label class="xuanx" wx:for="{{teacherArray}}" wx:key="index" data-index="{{index}}">
+          <view>{{item.schoolArea}}</view>
+          <radio value="{{item.schoolArea}}" checked="" />
+        </label>
+      </radio-group>
+    </scroll-view>
+    <view class="btnqd " bindtap="determineHander2">确定</view>
+  </view>
+</view>
+
+<!-- 查看更多评价信息 -->
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="layer_shown_box" wx:if="{{showModalStatus}}">
+  <view class="layer_root">
+    <view class="top_teacher">
+      <text class="teacher_title">查看评语</text>
+      <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+      </view>
+    </view>
+    <view class="teaching_plan" catchtouchmove="true">评语</view>
+    <scroll-view scroll-y="true" style="height: 600rpx;">
+      <view class="teaching_details">{{layerEvaluate.calssEvaluate}}</view>
+      <view class="center_teacher">老师</view>
+
+      <view class="teacher_bottom">
+        <view>
+          <image src="{{layerEvaluate.classTeacherHead}}" class="teacer_hear"></image>
+        </view>
+        <view class="bottom_right">
+          <view class="teacher_name">{{layerEvaluate.teacherName}}</view>
+          <view class="teacher_incrment">加入 {{organName}}时间:{{layerEvaluate.entryTime}} 年，{{layerEvaluate.teachingAgeA}}年教龄 </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+</view>
+
+
+<!-- 查看课程介绍 -->
+<view class="layer_shown" bindtap="hideModals" wx:if="{{showModalStatuss}}"></view>
+<!--弹出框  -->
+<view animation="{{sssss}}" class="layer_shown_box" wx:if="{{showModalStatuss}}">
+  <view class="layer_root">
+    <view class="top_teacher">
+      <text class="teacher_title">{{layerInfo.className}}</text>
+      <view class="bolck" catchtouchmove="true" bindtap="hideModals" wx:if="{{showModalStatuss}}">
+        <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+      </view>
+    </view>
+    <view class="teaching_plan" catchtouchmove="true">概要</view>
+    <scroll-view scroll-y="true" style="height: 600rpx;">
+      <view class="teaching_details">{{layerInfo.classInfo}}</view>
+      <view class="center_teacher">老师</view>
+
+      <view class="teacher_bottom">
+        <view>
+          <image src="{{layerInfo.classTeacherHead}}" class="teacer_hear"></image>
+        </view>
+        <view class="bottom_right">
+          <view class="teacher_name">{{layerInfo.teacherName}}</view>
+          <view class="teacher_incrment">加入 {{organName}}时间:{{layerInfo.entryTime}} 年，{{layerInfo.teachingAgeA}}年教龄 </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+</view>

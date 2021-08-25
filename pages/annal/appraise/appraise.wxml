@@ -1,0 +1,72 @@
+<view>
+  <view class="appraise">
+    <view class="pingjia">发表评价</view>
+    <view class="pj_desc">每次与您孩子眼神的交流，思维的启发，都希望得到您有温度的评价</view>
+  </view>
+
+  <view class="appraise_2" hidden="{{showStatus}}">
+    <view class="sum">总体</view>
+    <view>
+      <image class="xing" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png"></image>
+    </view>
+    <view class="pingfen">{{fraction}}</view>
+  </view>
+
+  <view class="appraise_3">
+    <view class="appraise_3_1">
+      <view class="desc">如实描述</view>
+      <view class="xinss">
+        <image class="xins" wx:for="{{5}}" data-index="{{index}}" bindtap='tureStartHader' src="{{score >= index ? 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png' : 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%9C%AA%E9%80%89-%E6%98%9F%403x.png'}}"></image>
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">课堂效果</view>
+      <view class="xinss">
+        <image class="xins" wx:for="{{5}}" data-index="{{index}}" bindtap='tureStartClassHader' src="{{scores >= index ? 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png' : 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%9C%AA%E9%80%89-%E6%98%9F%403x.png'}}"></image>
+
+
+      </view>
+    </view>
+    <view class="appraise_3_1">
+      <view class="desc">环境卫生</view>
+      <view class="xinss">
+        <image class="xins" wx:for="{{5}}" data-index="{{index}}" bindtap='tureStartHygieHader' src="{{scoress >= index ? 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%98%9F%403x.png' : 'https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/%E6%9C%AA%E9%80%89-%E6%98%9F%403x.png'}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="xian"></view>
+
+  <view class="daoyu">
+    <textarea class="weui-textarea" bindinput="bindTextAreaChange" placeholder-style="color:rgba(195, 194, 194, 0.5)" placeholder="尊敬的学员家长，您的孩子本次课程学习效果如何；课程内容与备课描述是否一致；授课老师，环境是否满意，或者存在其他建议呢？ 每个孩子的健康成长都离不开您对我们的点击评价。" value="{{info}}" maxlength="{{noteMaxLen}}"  />
+    <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
+
+  </view>
+
+  <view class="xian" style="margin-top: 20rpx;"></view>
+  <view class="thears">
+    <view>
+      <image class="thear" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/me/hader.jpg"></image>
+      <text class="theaname">王恒老师</text>
+    </view>
+
+    <view class="dianzz">
+      <switch color="RGBA(0, 132, 137, 1)" checked="{{switchChecked}}" bindchange="switchChange" />
+      <block wx:if="{{switchChecked}}">
+        <image class="turedianz" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/a32d8f535c3db29d3b7d8ce1a489314.png"></image>
+      </block>
+      <block wx:else>
+        <image class="falsedianz" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/ANANL/cecfd88aa995f331dcb0f765bc739d9.png"></image>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="xian" style="margin-top: 0rpx;  margin-bottom: 378rpx;"></view>
+
+
+
+    <view class="bottom_bar" bindtap="bindSubmit">
+    <view class="next_time">确定</view>
+  </view>
+</view>

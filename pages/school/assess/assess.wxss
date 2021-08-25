@@ -1,0 +1,139 @@
+.appraise {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 42rpx;
+}
+
+.pingjia {
+  font-size: 46rpx;
+  font-weight: 600;
+  color: rgba(22, 8, 10, 0.8);
+}
+
+.pj_desc {
+  margin-top: 18rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 36rpx;
+}
+
+/***************总评价部分*****************/
+
+.appraise_2 {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 27px;
+  display: flex;
+  position: relative;
+}
+
+.xing {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 5px;
+}
+
+.pingfen {
+  margin-left: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.sum {
+  margin-left: 26px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+/***************总评价部分*****************/
+
+.appraise_3 {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 18px;
+}
+
+.appraise_3_1 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.6);
+}
+
+.xinss {
+  position: absolute;
+  right: 46rpx;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 0.6);
+}
+
+.kuai {
+  width: 22px;
+  height: 4px;
+  background: rgba(41, 136, 135, 1);
+  border-radius: 1px;
+  margin-left: 2px;
+}
+
+.xian {
+  margin: 0px auto;
+  margin-top: 10rpx;
+  width: 90%;
+  height: 1px;
+  background-color: #efeeee;
+}
+.userap{
+  width: 90%;
+  margin: 0px auto;
+}
+.p_header {
+  display: flex;
+  margin-top: 28px;
+  position: relative;
+}
+
+.p_avater {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.p_name {
+  margin-left: 11px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(22, 8, 10, 1);
+}
+
+.p_time {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  position: absolute;
+  top: 25px;
+  left: 60px;
+}
+.p_body {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(22, 8, 10, 1);
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.foot{
+  padding-bottom: 50px;
+}

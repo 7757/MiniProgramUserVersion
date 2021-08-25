@@ -1,0 +1,130 @@
+<wxs src="../../../utils/subString/subString.wxs" module="tools" />
+
+
+<view class="root">
+
+  <view class="order_up">
+
+    <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/heards.jpg"></image>
+    <view class="up_right">
+      <view class="shop_name">南京市·奥体中心</view>
+      <view class="class_name">
+        【初级语法课】文字介绍文字文 字文字介绍文字介绍文字介绍…
+      </view>
+      <view class="term_validity">有效期至:2019-11-04</view>
+    </view>
+  </view>
+
+
+  <view class="order_and">
+    <view class="user_info">用户信息</view>
+    <view class="input_flex " style="margin-bottom: 76rpx;">
+      <view class="input_title">姓名</view>
+      <input class="input" name="userName" placeholder="（必填）" bindinput="userNameInput" placeholder-style="font-size:28rpx;text-align:right" />
+    </view>
+    <view class="input_flex ">
+      <view class="input_title">手机号</view>
+      <input class="input" name="userName" placeholder="（必填）" bindinput="userNameInput" placeholder-style="font-size:28rpx;text-align:right" />
+    </view>
+  </view>
+
+  <view class="order_ands">
+    <view class="user_info">推荐人</view>
+    <view class="input_flex " style="margin-bottom: 10rpx;">
+      <view class="input_title">工号</view>
+      <input class="input" name="jobNumber" placeholder="（非必填）" bindinput="jobNumberInput" placeholder-style="font-size:28rpx;text-align:right" />
+    </view>
+  </view>
+
+  <view class="order_dowm">
+    <view class="dowm_list" wx:for="{{commonProblem}}"  wx:key="id" style="margin-bottom: 28rpx;">
+      <text class="dowm_List_title">{{item.title}}:</text>
+      <text class="down_list_details"> {{ ( tools.strLengthThere(item.content))? tools.subThere(item.content):item.content}}</text>
+      <text bindtap="lookProblemHander" data-index="{{index}}" wx:if="tools.strLengthThere(item.content)" class="down_list_btn">查看全部</text>
+    </view>
+
+
+
+  </view>
+
+
+  <!-- 底部按钮 -->
+  <view class="bottom_bar">
+    <view class="reset" bindtap="priceDetails">
+      <view class="order_price">总价￥252</view>
+      <view class="price_details">价格明细</view>
+    </view>
+    <view class="next_btn" bindtap="nextHander">
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/school/teacherInfo/weChatPay.png"></image>
+      <view>微信支付</view>
+    </view>
+  </view>
+
+
+  
+</view>
+
+
+
+<view class="layer_shown" bindtap="priceHideModal" wx:if="{{priceStatus }}"></view>
+<!--弹出框  -->
+
+<view animation="{{animationPriceData}}" catchtouchmove="preventTouchMove" class="layer_shown_box" wx:if="{{priceStatus }}">
+
+
+  <view class="price_top ">
+    <text class="price_title">价格明细</text>
+    <view class="bolck" catchtouchmove="preventTouchMove" bindtap="priceHideModal" wx:if="{{priceStatus}}">
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+    </view>
+  </view>
+  <view class="price_and">
+    <view class="and_title ">费用明细</view>
+
+    <view class="and_item">
+      <view>课程原价</view>
+      <view>¥248.00</view>
+
+    </view>
+    <view class="and_item">
+
+      <view>儿童节特价8折</view>
+      <view>-¥50.00</view>
+
+    </view>
+    <view class="and_item">
+      <view>其他</view>
+      <view>-¥20.00</view>
+    </view>
+  </view>
+  <view class="price_down">
+    <view class="and_item">
+      <view>其他</view>
+      <view>-¥20.00</view>
+    </view>
+
+  </view>
+
+
+
+
+</view>
+
+
+
+
+<!-- 常见问题弹窗 -->
+<view class="layer_shown" bindtap="hideModal" wx:if="{{showModalStatus }}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" catchtouchmove="true" class="layer_shown_box" wx:if="{{showModalStatus}}">
+  <view class="top_teacher">
+    <text class="teacher_title">{{title}}</text>
+    <view class="bolck" catchtouchmove="true" bindtap="hideModal" wx:if="{{showModalStatus}}">
+      <image src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/cancelIoc.png"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="scrool_style">
+    <text class="content_info">{{text}}</text>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,39 @@
+
+<!-- 选择区后自动跳转地图页面 -->
+<!-- 步骤一：选择市，去数据库遍历对应区， -->
+<!-- 步骤二：循环遍历区，点击跳转，传递经纬度，切换页面内容 -->
+
+
+<view class="root">
+  <view class="top">
+    <view bindtap="cityHeander" class="city {{btnActive===1?'active':''}}">{{city}}</view>
+    <view bindtap="areaHeander" class="area {{btnActive===2?'active':''}}">全部地区</view>
+  </view>
+
+  <view class="bottom" wx:if="{{showType==='city'}}">
+    <view class="bottom_city">
+     <view class="list_area" bindtap="chooseCity" class="item_list" wx:for="{{cityArea}}"  data-citys="{{item.city}}" wx:key="index" data-index="{{index}}">
+        <text style="margin-right:530rpx">{{item.city}}</text>
+        <image wx:if="{{showIoa===index}}" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/moreStores/choiceArea/flag.png" class="bottom_flag"></image>
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+  <view class="bottom" wx:else="{{showType==='area'}}">
+    <view class="bottom_city">
+      <view class="list_area" bindtap="chooseArea" class="item_list" wx:for="{{cityArea[areaindex].area}}" data-areas="{{item}}" wx:key="{{index}}" data-index="{{index}}">
+        <text style="margin-right:530rpx">{{item}}</text>
+        <image wx:if="{{showIoc===index}}" src="https://sappbkt.oss-cn-shanghai.aliyuncs.com/home/moreStores/choiceArea/flag.png" class="bottom_flag"></image>
+      </view>
+
+    </view>
+
+
+  </view>
+
+
+</view>

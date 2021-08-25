@@ -1,0 +1,218 @@
+/* .buttom{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom:130rpx;
+  right: 60rpx;
+  z-index: 1001;
+} */
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  z-index: 999;
+  background: #000;
+  opacity: 0;
+  overflow: hidden;
+}
+.drawer_box {
+  overflow: hidden;
+  position: fixed;
+  z-index: 999;
+}
+
+
+.timetable_content {
+  position: fixed;
+  bottom:10%;
+  right: 3%;
+  z-index: 1001;
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0rpx 4rpx 14rpx 2rpx rgba(239, 238, 238, 1);
+  border: 4rpx solid rgba(255, 255, 255, 1);
+  text-align: center;
+  /* display: table-cell;
+  vertical-align: middle;
+   flex-direction: row; */
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.donghua01{
+animation-name: donghua1;
+animation-duration: 500ms;
+animation-timing-function:  ease;
+animation-fill-mode : forwards;
+}
+
+.donghua02{
+animation-name: donghua2;
+animation-duration: 300ms;
+animation-timing-function:  ease;
+animation-fill-mode : forwards;
+}
+
+
+
+
+
+@keyframes donghua1{
+ 0%{border-radius: 40rpx;width: 80rpx;height: 80rpx; }
+ 
+ 100%{border-radius:32rpx;width: 670rpx;height: 126rpx}
+}
+
+
+
+@keyframes donghua2{
+ 0%{border-radius: 32rpx;width: 670rpx;height: 126rpx;}
+  40%{border-radius: 32rpx;}
+   80%{border-radius: 32rpx;}
+ 100%{border-radius:50%;width: 80rpx;height: 80rpx;}
+  
+}
+
+
+
+
+
+
+.timetable_content image {
+  width: 34rpx;
+  height: 32rpx;
+
+  margin: 0 auto;
+
+}
+.number{
+  position: fixed;
+  top: 83%;
+  right: 3%;
+  z-index: 10001;
+  width: 13px;
+  height: 13px;
+  line-height: 13px;
+  font-size: 20rpx;
+  background-color: rgba(0,132,137,1);
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+
+
+/* _________________________________课表 */
+
+
+.timetable_main{
+  z-index: 1001;
+
+  position: fixed;
+  bottom: 110rpx;
+  right: 56rpx;
+  width:670rpx;
+  height:126rpx;
+  background:rgba(255,255,255,1);
+  border-radius:32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color:rgba(0,132,137,1);
+  }
+.title{
+  width:104rpx;
+  height:36rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(22,8,10,1);
+  line-height:36rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  }
+
+
+  
+
+.data_scroll{
+  width:  530rpx;
+  height: 100%;
+  white-space: nowrap;
+
+}
+.data_scrolls{
+    /* margin-top: 26rpx; */
+}
+
+.list_item{
+  width:98rpx;
+  height:72rpx;
+  border-radius:4rpx;
+  border:2rpx solid rgba(0,132,137,1);
+  display: inline-block;
+  margin-left: 16rpx;
+
+}
+
+
+.list_info_main{
+  margin: 14rpx 16rpx 14rpx 16rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.item_number{
+  width:18rpx;
+height:42rpx;
+font-size:40rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+line-height:42rpx;
+}
+
+.list_cc{
+  margin-left: 10rpx;
+
+}
+
+
+.smll_info{
+  display: flex;
+  flex-direction: column;
+  margin-top: -2rpx;
+}
+
+::-webkit-scrollbar {
+width: 0;
+height: 0;
+color: transparent;
+display: none;
+}
+
+
+.table_content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: #008489
+}
